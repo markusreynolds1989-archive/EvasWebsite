@@ -67,13 +67,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\main.css" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Add_Item.aspx" />
     <Content Include="Pages\Index.aspx" />
+    <Content Include="Pages\Login_Admin.aspx" />
+    <Content Include="Pages\Login_User.aspx" />
+    <Content Include="Pages\Store.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Business_Layer.cs" />
+    <Compile Include="Data\Data_Layer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Add_Item.aspx.cs">
+      <DependentUpon>Add_Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Add_Item.aspx.designer.cs">
+      <DependentUpon>Add_Item.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -82,10 +96,32 @@
     <Compile Include="Pages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Login_Admin.aspx.cs">
+      <DependentUpon>Login_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login_Admin.aspx.designer.cs">
+      <DependentUpon>Login_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login_User.aspx.cs">
+      <DependentUpon>Login_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login_User.aspx.designer.cs">
+      <DependentUpon>Login_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Store.aspx.cs">
+      <DependentUpon>Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Store.aspx.designer.cs">
+      <DependentUpon>Store.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -95,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CSS\" />
     <Folder Include="Models\" />
     <Folder Include="Pictures\" />
   </ItemGroup>
