@@ -7,6 +7,24 @@
 4. Add Javascript handling.
 5. Add functionality.
 
+###Pages TODO
+1. AddItem page
+	a. <del>Design</del>
+	b. Code 
+	c. Data
+2. Index
+	a. Design
+	b. Code
+	c. Data
+3. Store
+	a. Design
+	b. Code
+	c. Data
+4. About
+	a. Design
+	b. Code
+	c. Data
+
 ## Security
 1. Implement hashing for passwords.
 2. Finish log in pages.
@@ -19,3 +37,7 @@
 ## Payment
 1. Implement payment system.
 2. Implement user storage.
+
+## Functionality
+1. Dynamically add HTML by object.
+2. List of product items.

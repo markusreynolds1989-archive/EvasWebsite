@@ -18,21 +18,27 @@ namespace EvasWebsite.Pages
             string fileName;
             string path;
 
-            string getFileName()
+            try
             {
-                if (upPicture.HasFile == true)
+                string getFileName()
                 {
-                    fileName = upPicture.FileName;
-                    return fileName;
+                    if (upPicture.HasFile == true)
+                    {
+                        fileName = upPicture.FileName;
+                        return fileName;
+                    }
+                    else
+                    {
+                        return "";
+                    }
                 }
-                else
-                {
-                    return "";
-                }
+                path = "C:\\Users\\Reynolds\\source\\repos\\EvasWebsite\\EvasWebsite\\Pictures\\" + getFileName();
+                lblError.Text = path;
             }
-
-            path = "C:\\Users\\Reynolds\\source\\repos\\EvasWebsite\\EvasWebsite\\Pictures\\" + getFileName();
-            lblError.Text = path;
+            catch (NullReferenceException)
+            {
+                lblError.Text = "Input File";
+            }
         }
     }
 }

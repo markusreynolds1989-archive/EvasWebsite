@@ -8,14 +8,7 @@
 </head>
 <body>
     <form id="frmMain" runat="server">
-        <div>
-            <asp:Label runat="server" 
-                ID ="label" />
-
-            <asp:Button runat="server" 
-                ID ="test" 
-                Text ="Hello World" 
-                OnClick="test_Click"/>
+        <div id ="stuff" runat="server">
             
         </div>
     </form>
