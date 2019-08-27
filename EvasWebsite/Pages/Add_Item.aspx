@@ -6,6 +6,10 @@
 <head runat="server">
      <link rel="stylesheet" type="text/css" href="../CSS/main.css"/>
     <title>Add Product</title>
+    <script>
+        /* Validation Functions, we could also use C# */
+
+    </script>
 </head>
 <body>
     <form id="frmAddItem" runat="server">

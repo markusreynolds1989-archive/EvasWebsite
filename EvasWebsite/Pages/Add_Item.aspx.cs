@@ -27,17 +27,18 @@ namespace EvasWebsite.Pages
                         fileName = upPicture.FileName;
                         return fileName;
                     }
-                    else
-                    {
-                        return "";
-                    }
+                    return null;
                 }
+                /* Change the path name when we go to the server */
+
                 path = "C:\\Users\\Reynolds\\source\\repos\\EvasWebsite\\EvasWebsite\\Pictures\\" + getFileName();
                 lblError.Text = path;
+                upPicture.SaveAs(path);
+                imgPicturePreview.ImageUrl = path;
             }
             catch (NullReferenceException)
             {
-                lblError.Text = "Input File";
+                lblError.Text = "Please input a file.";
             }
         }
     }
