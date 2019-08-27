@@ -12,18 +12,22 @@
 	a. <del>Design</del>
 	b. Code 
 	c. Data
+	d. Security
 2. Index
 	a. Design
 	b. Code
 	c. Data
+	d. Security
 3. Store
 	a. Design
 	b. Code
 	c. Data
+	d. Security
 4. About
 	a. Design
 	b. Code
 	c. Data
+	d. Security
 
 ## Security
 1. Implement hashing for passwords.

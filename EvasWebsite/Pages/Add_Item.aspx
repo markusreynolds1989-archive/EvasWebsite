@@ -31,22 +31,22 @@
                 runat = "server" />
 
             <asp:TextBox
-                class = "Inputs"
-                id    = "txtDescription"
-                multiline ="true"
-                textMode= "MultiLine"
-                runat = "server" />
+                class     = "Inputs"
+                id        = "txtDescription"
+                multiline = "true"
+                textMode  = "MultiLine"
+                runat     = "server" />
             </p>
             <p>
             <asp:Label
-                class ="Labels"
-                id ="lblCost"
-                text ="Cost:"
-                runat="server" />
+                class = "Labels"
+                id    = "lblCost"
+                text  = "Cost:"
+                runat = "server" />
             <asp:TextBox
-                class ="Inputs"
-                id ="txtCost"
-                runat ="server" />
+                class = "Inputs"
+                id    = "txtCost"
+                runat = "server" />
             </p>
             <p>
             <asp:Label
@@ -68,10 +68,10 @@
                 text   = "Title"
                 runat  = "server" />
             <asp:Label
-                class = "Inputs"
-                id    = "lblTitlePre"
-                text  = ""
-                runat = "server" />
+                class  = "Inputs"
+                id     = "lblTitlePre"
+                text   = ""
+                runat  = "server" />
             </p>
             <p>
             <asp:Label
@@ -80,17 +80,17 @@
                 text   = "Description"
                 runat  = "server" />
             <asp:Label
-                class ="Inputs"
-                id ="lblDescriptionPost"
-                text =""
-                runat ="server" />
+                class  = "Inputs"
+                id     = "lblDescriptionPost"
+                text   = ""
+                runat  = "server" />
             </p>
             <p>
             <asp:Label
-                class ="Labels"
-                id =   "lblQuantity1"
-                text = "Quantity"
-                runat ="server" />
+                class = "Labels"
+                id    = "lblQuantity1"
+                text  = "Quantity"
+                runat = "server" />
 
             <asp:Label
                 class  = "Inputs"
@@ -100,14 +100,14 @@
             </p>
             <p>
             <asp:Label
-                class="Labels"
-                id="lblCost1"
-                text="Cost"
-                runat="server" />
+                class  = "Labels"
+                id     = "lblCost1"
+                text   = "Cost"
+                runat  = "server" />
             <asp:Label
-                class="Inputs"
-                id="lblCostPre"
-                runat="server" />
+                class  = "Inputs"
+                id     = "lblCostPre"
+                runat  = "server"  />
             </p>
             <p>
             <asp:Image

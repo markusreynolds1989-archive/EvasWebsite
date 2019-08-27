@@ -22,12 +22,12 @@ namespace EvasWebsite.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmMain;
         
         /// <summary>
-        /// stuff control.
+        /// topForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl stuff;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topForm;
     }
 }

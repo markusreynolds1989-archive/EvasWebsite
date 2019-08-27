@@ -77,9 +77,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Business_Layer.cs" />
-    <Compile Include="Data\Data_Layer.cs" />
-    <Compile Include="Data\Product.cs" />
+    <Compile Include="App_Data\Business_Layer.cs" />
+    <Compile Include="App_Data\Data_Layer.cs" />
+    <Compile Include="App_Data\Product.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -131,9 +131,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Pictures\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

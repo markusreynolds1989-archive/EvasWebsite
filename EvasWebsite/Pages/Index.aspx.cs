@@ -14,8 +14,8 @@ namespace EvasWebsite.Pages
             //call the displayProduct method to write the HTML to the page
             foreach (Product product in products)
             {
-                var item = new Product();
-                stuff.InnerHtml = product.displayProduct();
+                //var item = new Product();
+                //stuff.InnerHtml = product.displayProduct();
             }
 
         }
