@@ -4,10 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <link rel="stylesheet" type="text/css" href="../CSS/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css"/>
     <title>Add Product</title>
+    <script src ="../Scripts/jQuery.js"></script>
     <script>
         /* Validation Functions, we could also use C# */
+        /* TODO: Finish validation */
+        function validation() {
+            let Title = $(textTitle).get(value);
+        }
 
     </script>
 </head>
@@ -44,6 +49,19 @@
             <p>
             <asp:Label
                 class = "Labels"
+                id    = "lblQuantity"
+                text  = "Quantity:"
+                runat = "server" />
+
+            <asp:TextBox
+                class     = "Inputs"
+                id        = "txtQuantity"
+                multiline = "true"
+                runat     = "server" />
+            </p>
+            <p>
+            <asp:Label
+                class = "Labels"
                 id    = "lblCost"
                 text  = "Cost:"
                 runat = "server" />
@@ -68,9 +86,10 @@
             <p>
             <asp:Label
                 class  = "Labels"
-                id     = "lblPicPre"
+                id     = "lblTitle1"
                 text   = "Title"
                 runat  = "server" />
+
             <asp:Label
                 class  = "Inputs"
                 id     = "lblTitlePre"
@@ -80,12 +99,12 @@
             <p>
             <asp:Label
                 class  = "Labels"
-                id     = "lblDescriptionPre"
+                id     = "lblDescription1"
                 text   = "Description"
                 runat  = "server" />
             <asp:Label
                 class  = "Inputs"
-                id     = "lblDescriptionPost"
+                id     = "lblDescriptionPre"
                 text   = ""
                 runat  = "server" />
             </p>
@@ -117,16 +136,29 @@
             <asp:Image
                 class  = "Images"
                 id     = "imgPicturePreview"
-                src    = ""
                 runat  = "server" />
             </p>
+            <p>
+            <asp:Button 
+                class   = "Buttons"
+                id      = "btnPreview"
+                text    = "Preview"
+                runat   = "server" 
+                OnClick = "btnPreview_Click" 
+                BackColor="#66CCFF" />
+            </p>
+            <br />
+            <br />
             <p>
             <asp:Button 
                 class   = "Buttons"
                 id      = "btnAdd"
                 text    = "Add"
                 runat   = "server" 
-                OnClick = "btnAdd_Click" />
+                height  = "30px"
+                width   = "100px"
+                OnClick = "btnAdd_Click" 
+                BackColor="#33CC33" />
             </p>
                         
             <asp:Label

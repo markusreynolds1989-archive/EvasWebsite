@@ -74,6 +74,7 @@
     <Content Include="Pages\Login_Admin.aspx" />
     <Content Include="Pages\Login_User.aspx" />
     <Content Include="Pages\Store.aspx" />
+    <Content Include="Scripts\jQuery.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +134,6 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Pictures\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
