@@ -7,8 +7,11 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="frmLogin" runat="server">
         <div>
+            <asp:Login 
+                runat="server" 
+                class="Inputs"/> 
         </div>
     </form>
 </body>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Store.aspx.cs" Inherits="EvasWebsite.Pages.Store" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomerInfo.aspx.cs" Inherits="EvasWebsite.Pages.CustomerInfo" %>
 
 <!DOCTYPE html>
 
@@ -9,9 +9,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Xml
-                id = "html"
-                runat = "server" />
         </div>
     </form>
 </body>

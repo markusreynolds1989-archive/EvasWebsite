@@ -16,7 +16,11 @@ namespace EvasWebsite.Data
         public string displayProduct()
         {
             createProduct();
-            string HTML = $"<label text = {Title}/> <br/> <label text = {Description}/> <br/> <label text = {Quantity}/> <br/> <img src = '{PicturePath}'";
+            string HTML = 
+                $"<label text = {Title}/> <br/> " +
+                $"<label text = {Description}/> <br/> " +
+                $"<label text = {Quantity}/> <br/> " +
+                $"<img src = '{PicturePath}'";
             return HTML;
         }
 
