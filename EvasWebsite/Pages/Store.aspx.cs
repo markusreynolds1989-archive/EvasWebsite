@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,11 +13,9 @@ namespace EvasWebsite.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*potential way to load in the dynamic html
-             */
-
             var product = new Product();
-            html.DocumentContent = product.displayProduct();
+            mainStore.Text = product.displayProduct();
+            Trace.Write(product.displayProduct());
         }
     }
 }

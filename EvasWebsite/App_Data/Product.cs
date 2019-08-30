@@ -15,12 +15,17 @@ namespace EvasWebsite.Data
 
         public string displayProduct()
         {
+            /* this isn't perfect, it's probably best to clean this up to work
+             * better with CSS 
+             */
             createProduct();
-            string HTML = 
-                $"<label text = {Title}/> <br/> " +
-                $"<label text = {Description}/> <br/> " +
-                $"<label text = {Quantity}/> <br/> " +
-                $"<img src = '{PicturePath}'";
+            string HTML =
+            "<form id = 'item'> " +
+            $"<h1>{Title} </h1></br>" +
+            $"{Description} </br>" +
+            $"{Quantity} </br>" +
+            $"<img src = '{PicturePath}' + </br>" +
+            "</form>";
             return HTML;
         }
 
