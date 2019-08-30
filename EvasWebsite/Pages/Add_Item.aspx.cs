@@ -67,8 +67,7 @@ namespace EvasWebsite.Pages
                 , true
                 , upPicture.FileName);
 
-            Session["addedItem"] = product;
-            Server.Transfer("~/Store.aspx");
+            Session["addedItem"] = product.displayProducts();
         }
     }
 }

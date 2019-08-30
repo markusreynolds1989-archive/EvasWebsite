@@ -23,6 +23,9 @@
                 runat = "server"
                 id    = "mainStore">
             </asp:Literal>
+            <asp:Label 
+                runat = "server"
+                id    = "lblError" />
         </div>
     </form>
 </body>

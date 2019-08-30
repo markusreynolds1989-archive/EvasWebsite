@@ -34,9 +34,9 @@ namespace EvasWebsite.Data
             , string Description
             , int Quantity
             , bool Available
-            , string PicturePath)
-            { 
-            this.ID = ID ++;
+            , string PicturePath){ 
+
+            this.ID = ID;
             this.Title = Title;
             this.Description = Description;
             this.Quantity = Quantity;

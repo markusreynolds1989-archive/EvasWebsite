@@ -13,10 +13,15 @@ namespace EvasWebsite.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(Session["addedItem"]);
-            var product = new Product();
-            product.displayProducts();
-            mainStore.Text = display
+            try
+            {
+                string html = Session["addedItem"].ToString();
+                mainStore.Text = html;
+            }
+            catch
+            {
+                lblError.Text = "It's broke";
+            }
         }
     }
 }
