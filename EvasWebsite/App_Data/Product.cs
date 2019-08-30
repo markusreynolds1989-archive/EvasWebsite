@@ -19,12 +19,12 @@ namespace EvasWebsite.Data
              * better with CSS 
              */
             string HTML =
-            "<form id = 'item'> " +
+            "<div id = 'item'> " +
             $"<h1>{Title} </h1></br>" +
             $"{Description} </br>" +
             $"{Quantity} </br>" +
             $"<img src = '{PicturePath}' + </br>" +
-            "</form>";
+            "</div>";
             return HTML;
         }
 
@@ -35,15 +35,13 @@ namespace EvasWebsite.Data
             , int Quantity
             , bool Available
             , string PicturePath)
-        {
-            var product = new Product();
-            product.ID = ID ++;
-            product.Title = Title;
-            product.Description = Description;
-            product.Quantity = Quantity;
-            product.Available = Available;
-            product.PicturePath = PicturePath;
+            { 
+            this.ID = ID ++;
+            this.Title = Title;
+            this.Description = Description;
+            this.Quantity = Quantity;
+            this.Available = Available;
+            this.PicturePath = PicturePath;
+            }
         }
     }
-
-}

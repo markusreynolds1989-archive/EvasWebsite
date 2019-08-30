@@ -19,7 +19,6 @@ namespace EvasWebsite.Pages
              */
             string fileName;
             string path;
-
             try
             {
                 string getFileName()
@@ -59,6 +58,7 @@ namespace EvasWebsite.Pages
              */
 
             var product = new Product();
+
             product.createProducts(
                 1
                 , txtTitle.Text
