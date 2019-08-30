@@ -70,6 +70,7 @@
     <Content Include="CSS\main.css" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Add_Item.aspx" />
+    <Content Include="Pages\CustomerInfo.aspx" />
     <Content Include="Pages\Index.aspx" />
     <Content Include="Pages\Login_Admin.aspx" />
     <Content Include="Pages\Login_User.aspx" />
@@ -90,6 +91,13 @@
     </Compile>
     <Compile Include="Pages\Add_Item.aspx.designer.cs">
       <DependentUpon>Add_Item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerInfo.aspx.cs">
+      <DependentUpon>CustomerInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CustomerInfo.aspx.designer.cs">
+      <DependentUpon>CustomerInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
