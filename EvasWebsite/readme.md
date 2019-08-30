@@ -4,7 +4,7 @@
 1. Decide on what pages we need.
 2. Design them.
 3. Implement CSS to prettify them.
-4. Add Javascript handling.
+4. Add Javascript handling. < jQuery validation
 5. Add functionality.
 
 ###Pages TODO
@@ -12,7 +12,6 @@
 	a. <del>Design</del>
 	b. Code - getting more complete, we added a way to upload image, need to convert all to object
 	and then take the objects with linq
-
 	c. Data
 	d. Security
 2. Index
@@ -33,7 +32,7 @@
 
 ## Security
 1. Implement hashing for passwords.
-2. Finish log in pages.
+2. Finish login pages.
 3. Set security levels.
 
 ## Database
