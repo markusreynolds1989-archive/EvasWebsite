@@ -13,9 +13,7 @@ namespace EvasWebsite.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var product = new Product();
-            mainStore.Text = product.displayProduct();
-            Trace.Write(product.displayProduct());
+
         }
     }
 }

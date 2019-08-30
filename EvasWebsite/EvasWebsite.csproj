@@ -75,6 +75,7 @@
     <Content Include="Pages\Login_Admin.aspx" />
     <Content Include="Pages\Login_User.aspx" />
     <Content Include="Pages\Store.aspx" />
+    <Content Include="Scripts\boxOffer.js" />
     <Content Include="Scripts\jQuery.js" />
     <Content Include="Web.config" />
   </ItemGroup>

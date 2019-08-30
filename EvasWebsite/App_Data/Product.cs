@@ -13,12 +13,11 @@ namespace EvasWebsite.Data
         public string PicturePath { get; set; }
 
 
-        public string displayProduct()
+        public string displayProducts()
         {
             /* this isn't perfect, it's probably best to clean this up to work
              * better with CSS 
              */
-            createProduct();
             string HTML =
             "<form id = 'item'> " +
             $"<h1>{Title} </h1></br>" +
@@ -29,19 +28,21 @@ namespace EvasWebsite.Data
             return HTML;
         }
 
-        public void createProduct()
+        public void createProducts(
+              int ID
+            , string Title
+            , string Description
+            , int Quantity
+            , bool Available
+            , string PicturePath)
         {
-            ID = 23;
-            Title = "Bow";
-            Description = "BLAH BLAH BLAH";
-            Quantity = 2;
-            Available = true;
-            PicturePath = "...";
-        }
-
-        public static implicit operator List<object>(Product v)
-        {
-            throw new NotImplementedException();
+            var product = new Product();
+            product.ID = ID ++;
+            product.Title = Title;
+            product.Description = Description;
+            product.Quantity = Quantity;
+            product.Available = Available;
+            product.PicturePath = PicturePath;
         }
     }
 

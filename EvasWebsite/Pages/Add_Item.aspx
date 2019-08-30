@@ -160,6 +160,11 @@
                 OnClick = "btnAdd_Click" 
                 BackColor="#33CC33" />
             </p>
+            <p>
+                <asp:HyperLink 
+                    runat ="server" NavigateUrl="~/Pages/Store.aspx"
+                    >[]</asp:HyperLink>
+            </p>
                         
             <asp:Label
                 id    = "lblError"

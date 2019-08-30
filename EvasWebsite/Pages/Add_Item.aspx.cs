@@ -1,4 +1,5 @@
 ﻿using System;
+using EvasWebsite.Data;
 
 namespace EvasWebsite.Pages
 {
@@ -50,8 +51,24 @@ namespace EvasWebsite.Pages
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            /* save all the information to linq object */
+            /* save all the information to linq object 
+             * this info needs to get posted to the other page
+             * down the line this will be sql but 
+             * from what I've seen it's better to have this as
+             * iterable linq first 
+             */
 
+            var product = new Product();
+            product.createProducts(
+                1
+                , txtTitle.Text
+                , txtDescription.Text
+                , Convert.ToInt32(txtQuantity.Text)
+                , true
+                , upPicture.FileName);
+
+            Session["addedItem"] = product;
+            Server.Transfer("~/Store.aspx");
         }
     }
 }
