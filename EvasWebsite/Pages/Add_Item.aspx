@@ -4,9 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" type="text/css" href="../CSS/main.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <title>Add Product</title>
-    <script src ="../Scripts/jQuery.js"></script>
+    <script src="../Scripts/jQuery.js"></script>
     <script>
         /* Validation Functions, we could also use C# */
         /* TODO: Finish validation */
@@ -18,158 +19,111 @@
 </head>
 <body>
     <form id="frmAddItem" runat="server">
-        <div class ="topForm">
+        <div class="w3-container">
             <h1>Add Item</h1>
             <p>
-            <asp:Label
-                class = "Labels"
-                id    = "lblTitle"
-                text  = "Title:"
-                runat = "server" />
+                <asp:TextBox
+                    class="w3-input"
+                    ID="txtTitle"
+                    placeholder="Title"
+                    runat="server" />
+            </p>
+            <p>
+                <asp:TextBox
+                    class="w3-input"
+                    ID="txtDescription"
+                    multiline="true"
+                    TextMode="MultiLine"
+                    placeholder="Description"
+                    runat="server" />
+            </p>
+            <p>
+                <asp:TextBox
+                    class="w3-input"
+                    ID="txtQuantity"
+                    multiline="true"
+                    placeholder="Quantity"
+                    runat="server" />
+            </p>
+            <p>
+                <asp:TextBox
+                    class="w3-input"
+                    ID="txtCost"
+                    placeholder="Cost"
+                    runat="server" />
+            </p>
+            <p>
+                <asp:Label
+                    ID="lblUp"
+                    Text="Upload picture"
+                    runat="server" />
 
-            <asp:TextBox
-                class = "Inputs"
-                id    = "txtTitle"
-                runat = "server"/>
+                <asp:FileUpload
+                    class="w3-input"
+                    ID="upPicture"
+                    runat="server" />
+            </p>
+            <div class="w3-container w3-card-4 w3-margin">
+                <h2>Preview</h2>
+                <p>
+                    <asp:Label
+                        ID="lblTitlePre"
+                        Text=""
+                        runat="server" />
+                </p>
+                <p>
+                    <asp:Label
+                        ID="lblDescriptionPre"
+                        Text=""
+                        runat="server" />
+                </p>
+                <p>
+                    <asp:Label
+                        ID="lblQuantityPre"
+                        Text=""
+                        runat="server" />
+                </p>
+                <p>
+                    <asp:Label
+                        ID="lblCostPre"
+                        runat="server" />
+                </p>
+                <p>
+                    <asp:Image
+                        class="w3-image"
+                        ID="imgPicturePreview"
+                        runat="server" />
+                </p>
+            </div>
+            <p>
+                <asp:Button
+                    class="w3-btn w3-blue w3-round"
+                    ID="btnPreview"
+                    Text="Preview"
+                    runat="server"
+                    OnClick="btnPreview_Click" />
             </p>
             <p>
-            <asp:Label
-                class = "Labels"
-                id    = "lblDescription"
-                text  = "Description:"
-                runat = "server" />
-
-            <asp:TextBox
-                class     = "Inputs"
-                id        = "txtDescription"
-                multiline = "true"
-                textMode  = "MultiLine"
-                runat     = "server" />
+                <asp:Button
+                    class="w3-btn w3-green w3-round"
+                    ID="btnAdd"
+                    Text="Add"
+                    runat="server"
+                    OnClick="btnAdd_Click" />
             </p>
             <p>
-            <asp:Label
-                class = "Labels"
-                id    = "lblQuantity"
-                text  = "Quantity:"
-                runat = "server" />
-
-            <asp:TextBox
-                class     = "Inputs"
-                id        = "txtQuantity"
-                multiline = "true"
-                runat     = "server" />
+                <asp:HyperLink
+                    class="w3-button w3-grey"
+                    runat="server"
+                    NavigateUrl="~/Pages/Store.aspx">
+                    Go to Store
+                </asp:HyperLink>
             </p>
-            <p>
             <asp:Label
-                class = "Labels"
-                id    = "lblCost"
-                text  = "Cost:"
-                runat = "server" />
-            <asp:TextBox
-                class = "Inputs"
-                id    = "txtCost"
-                runat = "server" />
-            </p>
-            <p>
-            <asp:Label
-                class = "Labels"
-                id    = "lblUp"
-                text  = "Upload picture" 
-                runat = "server" />
-
-            <asp:FileUpload
-                class = "Inputs"
-                id    = "upPicture"
-                runat = "server" />
-            </p>
-            <h2>Preview</h2>
-            <p>
-            <asp:Label
-                class  = "Labels"
-                id     = "lblTitle1"
-                text   = "Title"
-                runat  = "server" />
-
-            <asp:Label
-                class  = "Inputs"
-                id     = "lblTitlePre"
-                text   = ""
-                runat  = "server" />
-            </p>
-            <p>
-            <asp:Label
-                class  = "Labels"
-                id     = "lblDescription1"
-                text   = "Description"
-                runat  = "server" />
-            <asp:Label
-                class  = "Inputs"
-                id     = "lblDescriptionPre"
-                text   = ""
-                runat  = "server" />
-            </p>
-            <p>
-            <asp:Label
-                class = "Labels"
-                id    = "lblQuantity1"
-                text  = "Quantity"
-                runat = "server" />
-
-            <asp:Label
-                class  = "Inputs"
-                id     = "lblQuantityPre"
-                text   = ""
-                runat  = "server" />  
-            </p>
-            <p>
-            <asp:Label
-                class  = "Labels"
-                id     = "lblCost1"
-                text   = "Cost"
-                runat  = "server" />
-            <asp:Label
-                class  = "Inputs"
-                id     = "lblCostPre"
-                runat  = "server"  />
-            </p>
-            <p>
-            <asp:Image
-                class  = "Images"
-                id     = "imgPicturePreview"
-                runat  = "server" />
-            </p>
-            <p>
-            <asp:Button 
-                class   = "Buttons"
-                id      = "btnPreview"
-                text    = "Preview"
-                runat   = "server" 
-                OnClick = "btnPreview_Click" 
-                BackColor="#66CCFF" />
-            </p>
-            <br />
-            <br />
-            <p>
-            <asp:Button 
-                class   = "Buttons"
-                id      = "btnAdd"
-                text    = "Add"
-                runat   = "server" 
-                height  = "30px"
-                width   = "100px"
-                OnClick = "btnAdd_Click" 
-                BackColor="#33CC33" />
-            </p>
-            <p>
-                <asp:HyperLink 
-                    runat ="server" NavigateUrl="~/Pages/Store.aspx"
-                    >[]</asp:HyperLink>
-            </p>
-                        
-            <asp:Label
-                id    = "lblError"
-                text  = "" 
-                runat = "server" />
+                class="Error"
+                ID="lblError"
+                Text=""
+                runat="server" />
 
         </div>
     </form>

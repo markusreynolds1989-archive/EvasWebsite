@@ -2,7 +2,6 @@
     font-family: Alegreya,serif;
     font-size: 18px;
     background-color: ghostwhite;
-    text-align: center;
 }
 
 .Images {
@@ -20,18 +19,6 @@
 }
 
 
-.Labels {
-    display: inline-block;
-    width: 10%;
-    text-align: left;
-}
-
-.Inputs {
-    display: inline-block;
-    width: 15%;
-    text-align:right;
-}
-
 .Icons {
     height: 50px;
     width: 60px;
@@ -48,7 +35,3 @@
     font-weight: 600;
 }
 
-.topForm{
-    width: 1500px;
-    margin: 200px 200px 100px 100px;
-}

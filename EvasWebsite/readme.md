@@ -11,7 +11,7 @@
 1. AddItem page
 	a. <del>Design</del>
 	b. Code - getting more complete, we added a way to upload image, need to convert all to object
-	and then take the objects with linq
+	and then take the objects with linq < or maybe just straight to Sql
 	c. Data
 	d. Security
 2. Index

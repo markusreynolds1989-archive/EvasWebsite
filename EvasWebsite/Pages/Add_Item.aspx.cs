@@ -1,5 +1,6 @@
 ﻿using System;
 using EvasWebsite.Data;
+using System.Data.SqlClient;
 
 namespace EvasWebsite.Pages
 {
@@ -56,19 +57,20 @@ namespace EvasWebsite.Pages
              * from what I've seen it's better to have this as
              * iterable linq first 
              */
-
+            string connect =           "user id = username; " +
+                                       "password=password;server=serverurl;" +
+                                       "Trusted_Connection=yes;" +
+                                       "database=C:\\Users\\Reynolds\\source\\repos\\EvasWebsite" +
+                                       "\\EvasWebsite\\App_Data\\ECommerce.mdf; " +
+                                       "connection timeout=30";
             var product = new Product();
-
-            product.createProducts(
-                1
-                , txtTitle.Text
-                , txtDescription.Text
-                , Convert.ToInt32(txtQuantity.Text)
-                , Convert.ToInt32(txtCost.Text)
-                , true
-                , upPicture.FileName); 
-
-            Session["addedItem"] = product.displayProducts();
+            string sqlCmd = "insert into tblProducts(Title, Description, Quantity, Cost, PicturePath, Updt_dt_tm)" +
+            $"values('{txtTitle.Text}', '{txtDescription.Text}', {txtQuantity.Text}, {txtCost.Text}, '{upPicture.FileName}', SYSDATETIME());";
+            var myConnection = new SqlConnection(connect);
+            var command = new SqlCommand(sqlCmd,myConnection);
+            myConnection.Open();
+            command.ExecuteNonQuery();
+            myConnection.Close();
         }
     }
 }
