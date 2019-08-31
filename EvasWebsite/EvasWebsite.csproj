@@ -41,6 +41,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -73,9 +75,10 @@
     </Content>
     <Content Include="CSS\main.css" />
     <Content Include="Global.asax" />
+    <Content Include="Models\Default.aspx" />
     <Content Include="Pages\Add_Item.aspx" />
     <Content Include="Pages\CustomerInfo.aspx" />
-    <Content Include="Pages\Index.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="Pages\Login_Admin.aspx" />
     <Content Include="Pages\Login_User.aspx" />
     <Content Include="Pages\Store.aspx" />
@@ -91,6 +94,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Add_Item.aspx.cs">
       <DependentUpon>Add_Item.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,11 +115,11 @@
     <Compile Include="Pages\CustomerInfo.aspx.designer.cs">
       <DependentUpon>CustomerInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Index.aspx.cs">
+    <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Index.aspx.designer.cs">
+    <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login_Admin.aspx.cs">
@@ -134,11 +144,23 @@
       <DependentUpon>Store.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="readme.md" />
+    <None Include="Properties\PublishProfiles\5349-34620.el-alt.com - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\5349-34620.el-alt.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,9 +168,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
