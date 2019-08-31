@@ -64,8 +64,9 @@ namespace EvasWebsite.Pages
                 , txtTitle.Text
                 , txtDescription.Text
                 , Convert.ToInt32(txtQuantity.Text)
+                , Convert.ToInt32(txtCost.Text)
                 , true
-                , upPicture.FileName);
+                , upPicture.FileName); 
 
             Session["addedItem"] = product.displayProducts();
         }

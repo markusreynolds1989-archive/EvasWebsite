@@ -20,7 +20,7 @@ namespace EvasWebsite.Pages
             }
             catch
             {
-                lblError.Text = "It's broke";
+                lblError.Text = "No products are available to display at this time.";
             }
         }
     }
