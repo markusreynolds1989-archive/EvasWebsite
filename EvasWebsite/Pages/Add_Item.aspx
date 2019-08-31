@@ -11,10 +11,21 @@
     <script>
         /* Validation Functions, we could also use C# */
         /* TODO: Finish validation */
-        function validation() {
-            let Title = $(textTitle).get(value);
-        }
+        /* string => string => int => int => string => boolean */
+        let Title = $(txtTitle).get(value);
+        let Description = $(txtQuantity).get(value);
 
+        const validation = (title
+            , description
+            , quantity
+            , cost
+            , picturePath) => {
+            if (1 == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     </script>
 </head>
 <body>
@@ -63,13 +74,22 @@
                     ID="upPicture"
                     runat="server" />
             </p>
-            <div class="w3-container w3-card-4 w3-margin">
+            <div class="w3-container w3-card-4 w3-margin w3-white">
                 <h2>Preview</h2>
-                <p>
+                <h3>
                     <asp:Label
                         ID="lblTitlePre"
                         Text=""
                         runat="server" />
+                </h3>
+                <p>
+                    <asp:Image
+                        class="w3-image"
+                        ID="imgPicturePreview"
+                        runat="server"
+                        height="200"
+                        widht="200"
+                        imageURL="~/Pictures/bow.jpg"/>
                 </p>
                 <p>
                     <asp:Label
@@ -86,12 +106,6 @@
                 <p>
                     <asp:Label
                         ID="lblCostPre"
-                        runat="server" />
-                </p>
-                <p>
-                    <asp:Image
-                        class="w3-image"
-                        ID="imgPicturePreview"
                         runat="server" />
                 </p>
             </div>
@@ -113,18 +127,18 @@
             </p>
             <p>
                 <asp:HyperLink
-                    class="w3-button w3-grey"
+                    class="w3-button w3-grey w3-round"
                     runat="server"
                     NavigateUrl="~/Pages/Store.aspx">
                     Go to Store
                 </asp:HyperLink>
             </p>
             <asp:Label
-                class="Error"
+                class="w3-panel w3-red"
                 ID="lblError"
                 Text=""
-                runat="server" />
-
+                runat="server" 
+                visible ="false"/>
         </div>
     </form>
 </body>

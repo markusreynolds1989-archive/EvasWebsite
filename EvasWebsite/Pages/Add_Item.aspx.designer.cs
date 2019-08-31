@@ -85,6 +85,15 @@ namespace EvasWebsite.Pages {
         protected global::System.Web.UI.WebControls.Label lblTitlePre;
         
         /// <summary>
+        /// imgPicturePreview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgPicturePreview;
+        
+        /// <summary>
         /// lblDescriptionPre control.
         /// </summary>
         /// <remarks>
@@ -110,15 +119,6 @@ namespace EvasWebsite.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostPre;
-        
-        /// <summary>
-        /// imgPicturePreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPicturePreview;
         
         /// <summary>
         /// btnPreview control.

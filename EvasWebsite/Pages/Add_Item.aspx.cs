@@ -36,8 +36,6 @@ namespace EvasWebsite.Pages
                 path = "C:\\Users\\Reynolds\\source\\repos\\EvasWebsite\\EvasWebsite\\Pictures\\" + getFileName();
                 lblError.Text = path;
                 upPicture.SaveAs(path);
-                imgPicturePreview.ImageUrl = path;
-                imgPicturePreview.Visible = true;
                 lblTitlePre.Text = txtTitle.Text;
                 lblDescriptionPre.Text = txtDescription.Text;
                 lblQuantityPre.Text = txtQuantity.Text;
@@ -57,12 +55,8 @@ namespace EvasWebsite.Pages
              * from what I've seen it's better to have this as
              * iterable linq first 
              */
-            string connect =           "user id = username; " +
-                                       "password=password;server=serverurl;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=C:\\Users\\Reynolds\\source\\repos\\EvasWebsite" +
-                                       "\\EvasWebsite\\App_Data\\ECommerce.mdf; " +
-                                       "connection timeout=30";
+            string connect = "Data Source=tcp:s08.everleap.com;Initial Catalog=DB_5349_evaswebsite;User ID=DB_5349_evaswebsite_user;Password=Sonics.256;Integrated Security=False;";
+
             var product = new Product();
             string sqlCmd = "insert into tblProducts(Title, Description, Quantity, Cost, PicturePath, Updt_dt_tm)" +
             $"values('{txtTitle.Text}', '{txtDescription.Text}', {txtQuantity.Text}, {txtCost.Text}, '{upPicture.FileName}', SYSDATETIME());";

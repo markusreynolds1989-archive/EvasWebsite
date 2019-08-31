@@ -79,6 +79,7 @@
     <Content Include="Pages\Login_Admin.aspx" />
     <Content Include="Pages\Login_User.aspx" />
     <Content Include="Pages\Store.aspx" />
+    <Content Include="Pictures\bow.jpg" />
     <Content Include="Scripts\boxOffer.js" />
     <Content Include="Scripts\jQuery.js" />
     <Content Include="Web.config" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="readme.md" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Pictures\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
