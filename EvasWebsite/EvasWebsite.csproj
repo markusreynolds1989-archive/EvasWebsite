@@ -69,10 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ECommerce.mdf" />
-    <Content Include="App_Data\ECommerce_log.ldf">
-      <DependentUpon>ECommerce.mdf</DependentUpon>
-    </Content>
     <Content Include="CSS\main.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\Default.aspx" />

@@ -12,8 +12,8 @@
         /* Validation Functions, we could also use C# */
         /* TODO: Finish validation */
         /* string => string => int => int => string => boolean */
-        let Title = $(txtTitle).get(value);
-        let Description = $(txtQuantity).get(value);
+        let Title = $('#txtTitle').val();
+        let Description = $('#txtQuantity').val();
 
         const validation = (title
             , description
@@ -29,8 +29,9 @@
     </script>
 </head>
 <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <form id="frmAddItem" runat="server">
-        <div class="w3-container">
+        <div class="w3-container w3-center">
             <h1>Add Item</h1>
             <p>
                 <asp:TextBox

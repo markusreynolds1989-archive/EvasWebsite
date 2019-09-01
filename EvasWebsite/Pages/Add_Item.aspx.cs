@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Add_Item Code Behind
+//Programmed by: Markus Reynolds
+//09/01/2019
+
+using System;
 using EvasWebsite.Data;
 using System.Data.SqlClient;
 
@@ -40,6 +44,7 @@ namespace EvasWebsite.Pages
                 lblDescriptionPre.Text = txtDescription.Text;
                 lblQuantityPre.Text = txtQuantity.Text;
                 lblCostPre.Text = txtCost.Text;
+
             }
             catch (NullReferenceException)
             {
@@ -49,22 +54,28 @@ namespace EvasWebsite.Pages
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            /* save all the information to linq object 
-             * this info needs to get posted to the other page
-             * down the line this will be sql but 
-             * from what I've seen it's better to have this as
-             * iterable linq first 
-             */
-            string connect = "Data Source=tcp:s08.everleap.com;Initial Catalog=DB_5349_evaswebsite;User ID=DB_5349_evaswebsite_user;Password=Sonics.256;Integrated Security=False;";
+            /*capture data*/
 
-            var product = new Product();
-            string sqlCmd = "insert into tblProducts(Title, Description, Quantity, Cost, PicturePath, Updt_dt_tm)" +
-            $"values('{txtTitle.Text}', '{txtDescription.Text}', {txtQuantity.Text}, {txtCost.Text}, '{upPicture.FileName}', SYSDATETIME());";
-            var myConnection = new SqlConnection(connect);
-            var command = new SqlCommand(sqlCmd,myConnection);
-            myConnection.Open();
-            command.ExecuteNonQuery();
-            myConnection.Close();
+            string title = txtTitle.Text;
+            string desc = txtDescription.Text;
+            int quant = Convert.ToInt32(txtQuantity.Text);
+            float cost = Convert.ToSingle(txtCost.Text);
+            string picture = upPicture.FileName;
+            
+            /*save it to the database */
+
+            if (Data_Layer.AddProduct(title
+                , desc
+                , quant
+                , cost
+                , picture))
+            {
+                lblError.Text = "Did it work!?";
+            }
+            else
+            {
+                lblError.Text = "Didn't work.";
+            }
         }
     }
 }
