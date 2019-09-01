@@ -12,16 +12,24 @@ namespace EvasWebsite.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnPreview_Click(object sender, EventArgs e)
-        {
-            /* Add in funcitonality
-             * When the user clicks this button it verifies the picture
-             * and then moves it to the pictures folder and then that url to the database
-             * scratch that, we want the saving to be done in the next method
+            /*
+             * Security, prevent people from coming on here that don't belong
              */
+            /* 
+               if (Session["SecurityLevel"] != "A")
+                    {
+                        Response.Redirect("Login_Admin.aspx");
+                    } 
+            */
+       }
+
+       protected void btnPreview_Click(object sender, EventArgs e)
+       {
+           /* Add in funcitonality
+            * When the user clicks this button it verifies the picture
+            * and then moves it to the pictures folder and then that url to the database
+            * scratch that, we want the saving to be done in the next method
+            */
             string fileName;
             string path;
             try
