@@ -32,16 +32,15 @@ namespace EvasWebsite.Data
             /* how do we dynamically add ids to the buttons? SQL variables */
         }
 
-        public void createProducts(
-              int ID
-            , string Title
+        public void createProduct(
+              string Title
             , string Description
             , int Quantity
             , int Cost
             , bool Available
             , string PicturePath){ 
 
-            this.ID = ID;
+
             this.Title = Title;
             this.Description = Description;
             this.Quantity = Quantity;

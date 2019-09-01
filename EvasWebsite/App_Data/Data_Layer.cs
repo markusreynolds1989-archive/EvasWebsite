@@ -59,11 +59,19 @@ namespace EvasWebsite.Data
                     myTransaction.Commit();
                     conn.Close();
                     recordSaved = true;
-                    System.Diagnostics.Debug.WriteLine("Uploaded");
+                    System.Diagnostics.Debug.WriteLine(
+                        "*********ALERT*********\n" +
+                        "Uploaded\n" +
+                        "**********ENDALERT******\n)");
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("HERE IS THE ISSUE " + ex.ToString());
+                    System.Diagnostics.Debug.WriteLine(
+                        "\n***********ALERT*********" +
+                        "\nAdd_Products Error:\n" + 
+                        ex.ToString() +
+                        "\n ******ENDALERT*********");
+
                     myTransaction.Rollback();
                     recordSaved = false;
                 }

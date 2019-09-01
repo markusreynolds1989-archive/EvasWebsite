@@ -10,6 +10,16 @@ namespace EvasWebsite.Pages
 {
     public partial class Add_Item : System.Web.UI.Page
     {
+        /* I think the only problem is that we are storing data here
+         * we should probably move this to the data layer, or call product 
+         */
+
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int Quantity { get; set; }
+        public float Cost { get; set; }
+        public string PicturePath { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             /*
@@ -21,68 +31,79 @@ namespace EvasWebsite.Pages
                         Response.Redirect("Login_Admin.aspx");
                     } 
             */
-       }
+        }
 
-       protected void btnPreview_Click(object sender, EventArgs e)
-       {
-           /* Add in funcitonality
-            * When the user clicks this button it verifies the picture
-            * and then moves it to the pictures folder and then that url to the database
-            * scratch that, we want the saving to be done in the next method
-            */
-            string fileName;
-            string path;
+        protected void btnPreview_Click(object sender, EventArgs e)
+        {
             try
             {
-                string getFileName()
-                {
-                    if (upPicture.HasFile == true)
-                    {
-                        fileName = upPicture.FileName;
-                        return fileName;
-                    }
-                    return null;
-                }
-                /* Change the path name when we go to the server */
-                /* TODO: Clean up this ugly mess */
-                path = "C:\\Users\\Reynolds\\source\\repos\\EvasWebsite\\EvasWebsite\\Pictures\\" + getFileName();
-                lblError.Text = path;
-                upPicture.SaveAs(path);
-                lblTitlePre.Text = txtTitle.Text;
-                lblDescriptionPre.Text = txtDescription.Text;
-                lblQuantityPre.Text = txtQuantity.Text;
-                lblCostPre.Text = txtCost.Text;
-
+                captureData();
+                lblTitlePre.Text = Title;
+                lblDescriptionPre.Text = Description;
+                lblQuantityPre.Text = Quantity.ToString();
+                lblCostPre.Text = Cost.ToString();
+                imgPicturePreview.ImageUrl = PicturePath;
             }
-            catch (NullReferenceException)
+            catch(Exception ex)
             {
-                lblError.Text = "Please input a file.";
+                System.Diagnostics.Debug.WriteLine("Error Occured in Preview: \n" + ex.ToString() + "\n");
             }
         }
 
+        /*Run the Add_Product Method from the Data_layer */
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            /*capture data*/
-
-            string title = txtTitle.Text;
-            string desc = txtDescription.Text;
-            int quant = Convert.ToInt32(txtQuantity.Text);
-            float cost = Convert.ToSingle(txtCost.Text);
-            string picture = upPicture.FileName;
-            
-            /*save it to the database */
-
-            if (Data_Layer.AddProduct(title
-                , desc
-                , quant
-                , cost
-                , picture))
+            try
             {
-                lblError.Text = "Did it work!?";
+                captureData();
+                if (Data_Layer.AddProduct
+                    (Title
+                    , Description
+                    , Quantity
+                    , Cost
+                    , PicturePath))
+                {
+                    lblError.Text = "Upload Successful";
+                }
+                else
+                {
+                    lblError.Text = "Upload Failed";
+                }
             }
-            else
+            catch(Exception ex)
             {
-                lblError.Text = "Didn't work.";
+                System.Diagnostics.Debug.WriteLine("Error Occured in Add: \n" + ex.ToString() + "\n");
+            }
+        }
+
+
+        public void captureData()
+        {
+            /* Js validation should take care of most of the heavy
+             * lifting for us, but the try is there nonetheless
+             * This method appears to be perfect
+             */
+            try
+            {
+                Title = txtTitle.Text;
+                Description = txtDescription.Text;
+                Quantity = Convert.ToInt32(txtQuantity.Text);
+                Cost = Convert.ToSingle(txtQuantity.Text);
+                if (upPicture.HasFile)
+                {
+                    PicturePath = "~/Pictures/" + upPicture.FileName;
+                    upPicture.SaveAs(Server.MapPath(PicturePath));
+                }
+                else
+                {
+                    lblError.Text = "Please select a file to upload";
+                }
+
+                System.Diagnostics.Debug.WriteLine($"\nAddTest: {Title} \n{Description} \n{Quantity} \n{Cost} \n{PicturePath} \n");
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error Occured in captureData(): " + ex.ToString() +"\n");
             }
         }
     }
