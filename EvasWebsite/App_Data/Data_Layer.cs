@@ -12,7 +12,16 @@ using System.Data;
 namespace EvasWebsite.Data
 {
     public class Data_Layer
-    {
+    { 
+        /// <summary>
+        /// Boolean for adding items to the database
+        /// </summary>
+        /// <param name="Title"></param>
+        /// <param name="Desc"></param>
+        /// <param name="Quant"></param>
+        /// <param name="Cost"></param>
+        /// <param name="Pic"></param>
+        /// <returns>True or False</returns>
         public static bool AddProduct(string Title
             , string Desc
             , int Quant
@@ -38,7 +47,7 @@ namespace EvasWebsite.Data
                     myTransaction = conn.BeginTransaction();
                     command.Transaction = myTransaction;
                     string strSQL = "Insert into tblProducts (Title, Description, Quant, Cost, Picture, Updt_dt_tm)" +
-                        $"values('@Title','@Desc',@Quant,@Cost,'@Pic',CURRENT_TIMESTAMP";
+                        $"values(@Title,@Desc,@Quant,@Cost,@Pic,CURRENT_TIMESTAMP)";
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     command.Parameters.AddWithValue("@Title", Title);
@@ -50,13 +59,13 @@ namespace EvasWebsite.Data
                     myTransaction.Commit();
                     conn.Close();
                     recordSaved = true;
-                    Console.WriteLine("Uploaded");
+                    System.Diagnostics.Debug.WriteLine("Uploaded");
                 }
                 catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine("HERE IS THE ISSUE " + ex.ToString());
                     myTransaction.Rollback();
                     recordSaved = false;
-                    Console.WriteLine("Failed");
                 }
                 return recordSaved;
             }

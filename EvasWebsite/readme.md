@@ -12,7 +12,7 @@
 	a. <del>Design</del>
 	b. Code - getting more complete, we added a way to upload image, need to convert all to object
 	and then take the objects with linq < or maybe just straight to Sql
-	c. Data
+	c. Data < Almost complete, we need to adjust the picture path
 	d. Security
 2. Index
 	a. Design
@@ -37,7 +37,9 @@
 
 ## Database
 1. Add SQL or NOSQL database management.
-2. Implement data class and model for database.
+2. Implement data class and model for database. < 
+### Methods:
+	1. <del>Add_Product</del>
 
 ## Payment
 1. Implement payment system.
