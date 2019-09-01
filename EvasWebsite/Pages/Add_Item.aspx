@@ -89,8 +89,7 @@
                         ID="imgPicturePreview"
                         runat="server"
                         height="200"
-                        widht="200"
-                        imageURL="~/Pictures/bow.jpg"/>
+                        widht="200"/>
                 </p>
                 <p>
                     <asp:Label

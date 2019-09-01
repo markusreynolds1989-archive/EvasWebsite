@@ -2,23 +2,17 @@
 //Programmed by: Markus Reynolds
 //09/01/2019
 
-using System;
 using EvasWebsite.Data;
-using System.Data.SqlClient;
+using System;
 
 namespace EvasWebsite.Pages
 {
     public partial class Add_Item : System.Web.UI.Page
     {
-        /* I think the only problem is that we are storing data here
-         * we should probably move this to the data layer, or call product 
+        /* new object of the Product class in the app_data 
+         * Use it here to keep OOP going correctly
          */
-
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public int Quantity { get; set; }
-        public float Cost { get; set; }
-        public string PicturePath { get; set; }
+        Product product = new Product();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,13 +32,13 @@ namespace EvasWebsite.Pages
             try
             {
                 captureData();
-                lblTitlePre.Text = Title;
-                lblDescriptionPre.Text = Description;
-                lblQuantityPre.Text = Quantity.ToString();
-                lblCostPre.Text = Cost.ToString();
-                imgPicturePreview.ImageUrl = PicturePath;
+                lblTitlePre.Text = product.Title;
+                lblDescriptionPre.Text = product.Description;
+                lblQuantityPre.Text = product.Quantity.ToString();
+                lblCostPre.Text = product.Cost.ToString();
+                imgPicturePreview.ImageUrl = product.PicturePath;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error Occured in Preview: \n" + ex.ToString() + "\n");
             }
@@ -57,20 +51,20 @@ namespace EvasWebsite.Pages
             {
                 captureData();
                 if (Data_Layer.AddProduct
-                    (Title
-                    , Description
-                    , Quantity
-                    , Cost
-                    , PicturePath))
+                    (product.Title
+                    , product.Description
+                    , product.Quantity
+                    , product.Cost
+                    , product.PicturePath))
                 {
-                    lblError.Text = "Upload Successful";
+                    lblError.Text = "Upload Successful!";
                 }
                 else
                 {
-                    lblError.Text = "Upload Failed";
+                    lblError.Text = "Upload Failed!";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error Occured in Add: \n" + ex.ToString() + "\n");
             }
@@ -85,25 +79,25 @@ namespace EvasWebsite.Pages
              */
             try
             {
-                Title = txtTitle.Text;
-                Description = txtDescription.Text;
-                Quantity = Convert.ToInt32(txtQuantity.Text);
-                Cost = Convert.ToSingle(txtQuantity.Text);
+                product.Title = txtTitle.Text;
+                product.Description = txtDescription.Text;
+                product.Quantity = Convert.ToInt32(txtQuantity.Text);
+                product.Cost = Convert.ToSingle(txtQuantity.Text);
                 if (upPicture.HasFile)
                 {
-                    PicturePath = "~/Pictures/" + upPicture.FileName;
-                    upPicture.SaveAs(Server.MapPath(PicturePath));
+                    product.PicturePath = "~/Pictures/" + upPicture.FileName;
+                    upPicture.SaveAs(Server.MapPath(product.PicturePath));
                 }
                 else
                 {
                     lblError.Text = "Please select a file to upload";
                 }
 
-                System.Diagnostics.Debug.WriteLine($"\nAddTest: {Title} \n{Description} \n{Quantity} \n{Cost} \n{PicturePath} \n");
+                System.Diagnostics.Debug.WriteLine($"\nAddTest: {product.Title} \n{product.Description} \n{product.Quantity} \n{product.Cost} \n{product.PicturePath} \n");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("Error Occured in captureData(): " + ex.ToString() +"\n");
+                System.Diagnostics.Debug.WriteLine("Error Occured in captureData(): " + ex.ToString() + "\n");
             }
         }
     }

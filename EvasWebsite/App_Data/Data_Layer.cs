@@ -22,6 +22,7 @@ namespace EvasWebsite.Data
         /// <param name="Cost"></param>
         /// <param name="Pic"></param>
         /// <returns>True or False</returns>
+        /// 
         public static bool AddProduct(string Title
             , string Desc
             , int Quant
