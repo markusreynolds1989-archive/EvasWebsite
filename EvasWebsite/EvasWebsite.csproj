@@ -77,6 +77,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Pages\Login\Login_Admin.aspx" />
     <Content Include="Pages\Login\Login_Customer.aspx" />
+    <Content Include="Pages\Secret\Secret.js" />
     <Content Include="Pages\StoreNav\Store.aspx" />
     <Content Include="Pages\UserManagement\Add_User.aspx" />
     <Content Include="Pages\UserManagement\User_Management.aspx" />
@@ -169,6 +170,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="readme.md" />
+    <Content Include="Pages\Secret\Secret.html" />
     <None Include="Properties\PublishProfiles\5349-34620.el-alt.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\5349-34620.el-alt.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Deploy.pubxml" />
