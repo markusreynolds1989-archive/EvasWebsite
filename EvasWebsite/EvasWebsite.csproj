@@ -145,6 +145,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
