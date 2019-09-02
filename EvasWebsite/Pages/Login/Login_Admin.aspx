@@ -16,7 +16,8 @@
             <asp:Login
                 class ="w3-card-4"
                 id ="AdminLogin"
-                runat ="server" OnAuthenticate="AdminLogin_Authenticate"
+                runat ="server" 
+                OnAuthenticate="AdminLogin_Authenticate" DestinationPageUrl="~/Pages/UserManagement/User_Management.aspx"
                 />
         </div>
     </form>
