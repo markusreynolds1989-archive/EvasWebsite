@@ -19,12 +19,11 @@ namespace EvasWebsite.Pages
             /*
              * Security, prevent people from coming on here that don't belong
              */
-            /* 
-               if (Session["SecurityLevel"] != "A")
+            
+               if (Session["SecurityLevel"] != "0")
                     {
-                        Response.Redirect("Login_Admin.aspx");
+                        Response.Redirect("~/Pages/Login/Login_Admin.aspx");
                     } 
-            */
         }
 
         protected void btnPreview_Click(object sender, EventArgs e)

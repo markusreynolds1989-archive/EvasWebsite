@@ -11,7 +11,10 @@ namespace EvasWebsite.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["SecurityLevel"] != "0")
+            {
+                Response.Redirect("~/Pages/Login/Login_Admin.aspx");
+            }
         }
     }
 }
