@@ -5,7 +5,13 @@
 
 const Screen = document.getElementById("Game");
 const ctx = Screen.getContext('2d');
-ctx.moveTo(100, 100);
-ctx.lineTo(50, 50);
-ctx.stroke();
 
+const head = (x, y) =>{
+    ctx.rect(x, y, 10, 10);
+    ctx.fill();
+}
+
+const load = () => { head(250, 490); ctx.stroke(); }
+
+
+load();
