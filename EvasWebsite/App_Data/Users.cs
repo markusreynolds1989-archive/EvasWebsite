@@ -10,6 +10,7 @@ namespace EvasWebsite.Data
         public int userID { get; set; }
         public string userName { get; set; }
         public string Password { get; set; }
+        public int securityLevel {get;set;}
 
         /* apparently not a secure method */
         public string hash(string password)

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login_User.aspx.cs" Inherits="EvasWebsite.Pages.Login_User" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login_Customer.aspx.cs" Inherits="EvasWebsite.Pages.Login_User" %>
 
 <!DOCTYPE html>
 
