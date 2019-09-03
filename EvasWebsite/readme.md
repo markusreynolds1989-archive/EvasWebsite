@@ -1,50 +1,30 @@
-﻿# TODO
+﻿#RoadMap
 
-## Pages
-1. Decide on what pages we need.
-2. Design them.
-3. Implement CSS to prettify them.
-4. Add Javascript handling. < jQuery validation
-5. Add functionality.
+##Keys
+The order in which we should work on this website, with security out of the way and a few vertical
+slices we can continue to look into the other functionality and design of the website. The most
+important is how the website looks and feels and then functionality and speed.
 
-###Pages TODO
-1. AddItem page
-	a. <del>Design</del>
-	b. Code - getting more complete, we added a way to upload image, need to convert all to object
-	and then take the objects with linq < or maybe just straight to Sql
-	c. Data < Almost complete, we need to adjust the picture path
-	d. Security
-2. Index
-	a. Design
-	b. Code
-	c. Data
-	d. Security
-3. Store
-	a. Design
-	b. Code
-	c. Data
-	d. Security
-4. About
-	a. Design
-	b. Code
-	c. Data
-	d. Security
+1. <del>Security</del> 
+2. Design/UX
+3. Funcionality
+4. Speed
+5. Data
 
-## Security
-1. Implement hashing for passwords.
-2. Finish login pages.
-3. Set security levels.
 
-## Database
-1. Add SQL or NOSQL database management.
-2. Implement data class and model for database. < 
-### Methods:
-	1. <del>Add_Product</del>
+##Pages
+1. Consistent Design Philosophy
+2. Singular CSS
+3. Compare Bootstrap and W3
+4. Implement the rest of the pages i.e. Store, Index etc.
+5. Finish the code behind
 
-## Payment
-1. Implement payment system.
-2. Implement user storage.
+##Data
+1. Finish the tables
+2. Where should the SQL methods be stored? In their data classes or data_layer class?
+3. Implement functions to show SQL data
+4. Implement LINQ functionality if it's faster
 
-## Functionality
-1. Dynamically add HTML by object.
-2. List of product items.
+##Security
+1. Test security implementation
+2. Continue to look at it when interfacing with the 3rd party payment auth
