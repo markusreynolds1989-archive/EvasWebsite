@@ -72,11 +72,13 @@
     <Content Include="CSS\main.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\Default.aspx" />
-    <Content Include="Pages\ProductManagement\Add_Item.aspx" />
+    <Content Include="Pages\Login\AdminDashboard.aspx" />
+    <Content Include="Pages\ProductManagement\Add_Product.aspx" />
     <Content Include="Pages\CustomerManagement\CustomerInfo.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Pages\Login\Login_Admin.aspx" />
     <Content Include="Pages\Login\Login_Customer.aspx" />
+    <Content Include="Pages\ProductManagement\Product_Management.aspx" />
     <Content Include="Pages\Secret\Secret.js" />
     <Content Include="Pages\StoreNav\Store.aspx" />
     <Content Include="Pages\UserManagement\Add_User.aspx" />
@@ -103,12 +105,19 @@
     <Compile Include="Models\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProductManagement\Add_Item.aspx.cs">
-      <DependentUpon>Add_Item.aspx</DependentUpon>
+    <Compile Include="Pages\Login\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\ProductManagement\Add_Item.aspx.designer.cs">
-      <DependentUpon>Add_Item.aspx</DependentUpon>
+    <Compile Include="Pages\Login\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductManagement\Add_Product.aspx.cs">
+      <DependentUpon>Add_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductManagement\Add_Product.aspx.designer.cs">
+      <DependentUpon>Add_Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CustomerManagement\CustomerInfo.aspx.cs">
       <DependentUpon>CustomerInfo.aspx</DependentUpon>
@@ -137,6 +146,13 @@
     </Compile>
     <Compile Include="Pages\Login\Login_Customer.aspx.designer.cs">
       <DependentUpon>Login_Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductManagement\Product_Management.aspx.cs">
+      <DependentUpon>Product_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductManagement\Product_Management.aspx.designer.cs">
+      <DependentUpon>Product_Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\StoreNav\Store.aspx.cs">
       <DependentUpon>Store.aspx</DependentUpon>

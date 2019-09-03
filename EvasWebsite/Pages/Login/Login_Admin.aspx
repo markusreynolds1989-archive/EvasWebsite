@@ -17,7 +17,7 @@
                 class ="w3-card-4"
                 id ="AdminLogin"
                 runat ="server" 
-                OnAuthenticate="AdminLogin_Authenticate" DestinationPageUrl="~/Pages/UserManagement/User_Management.aspx"
+                OnAuthenticate="AdminLogin_Authenticate" DestinationPageUrl="~/Pages/Login/AdminDashboard.aspx"
                 />
         </div>
     </form>
