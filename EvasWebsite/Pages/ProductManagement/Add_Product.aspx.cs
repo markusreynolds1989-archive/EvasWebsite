@@ -99,5 +99,13 @@ namespace EvasWebsite.Pages
                 System.Diagnostics.Debug.WriteLine("Error Occured in captureData(): " + ex.ToString() + "\n");
             }
         }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtTitle.Text = "";
+            txtDescription.Text = "";
+            txtQuantity.Text = "";
+            txtCost.Text = "";
+        }
     }
 }

@@ -15,7 +15,7 @@ important is how the website looks and feels and then functionality and speed.
 ## Pages
 1. Consistent Design Philosophy
 2. Singular CSS
-3. Compare Bootstrap and W3
+3. Switch to Bootstrap, better for mobile development
 4. Implement the rest of the pages i.e. Store, Index etc.
 5. Finish the code behind
 

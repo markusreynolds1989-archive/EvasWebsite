@@ -58,15 +58,6 @@ namespace EvasWebsite.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtCost;
         
         /// <summary>
-        /// lblUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUp;
-        
-        /// <summary>
         /// upPicture control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace EvasWebsite.Pages {
         protected global::System.Web.UI.WebControls.FileUpload upPicture;
         
         /// <summary>
-        /// lblTitlePre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitlePre;
-        
-        /// <summary>
         /// imgPicturePreview control.
         /// </summary>
         /// <remarks>
@@ -92,6 +74,15 @@ namespace EvasWebsite.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgPicturePreview;
+        
+        /// <summary>
+        /// lblTitlePre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTitlePre;
         
         /// <summary>
         /// lblDescriptionPre control.
@@ -128,6 +119,15 @@ namespace EvasWebsite.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPreview;
+        
+        /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
         
         /// <summary>
         /// btnAdd control.
