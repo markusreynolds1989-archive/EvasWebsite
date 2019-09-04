@@ -20,10 +20,20 @@
             , quantity
             , cost
             , picturePath) => {
-            if (1 == 1) {
-                return true;
-            } else {
+            /*use a regex to deteremine if they contain numbers/letters/symbols*/
+            if(title.compare(title, REGEXNUM));
+            if (description == null) {
                 return false;
+            }
+            if (quantity == null || quantity == string) {
+                return false;
+            }
+            if (cost == null || cost == string) {
+            }
+            if (picturePath == null) {
+                return false;
+            }else {
+                return true;
             }
         }
     </script>

@@ -88,6 +88,7 @@
     <Content Include="Pictures\placeHolderPerson.png" />
     <Content Include="Pictures\placeHolderRemovePerson.png" />
     <Content Include="Scripts\boxOffer.js" />
+    <Content Include="Scripts\Globals.js" />
     <Content Include="Scripts\jQuery.js" />
     <Content Include="Web.config" />
   </ItemGroup>
