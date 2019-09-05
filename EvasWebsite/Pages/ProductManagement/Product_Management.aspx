@@ -4,17 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
     <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <title>User Management</title>
     <script src="../Scripts/jQuery.js"></script>
 </head>
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit = no"/>
+
     <form id="frmMenu" runat="server">
 
-        <div class="w3-display-container" style="width:780px;height:500px;">
-            <div class="w3-center w3-display-left">
+        <div class="container">
+            <div class="container btn">
             <h2 class ="">Add Product</h2>
             <asp:ImageButton
                 runat="server"
@@ -25,7 +28,7 @@
                 PostBackUrl="~/Pages/ProductManagement/Add_Product.aspx"/>
             </div>
 
-            <div class="w3-center w3-display-middle">
+            <div class="container btn">
             <h2 class="">Modify Product</h2>
             <asp:ImageButton
                 runat="server"
@@ -35,7 +38,7 @@
                 height="100px"/>
             </div>
 
-            <div class="w3-center w3-display-right">
+            <div class="container btn">
             <h2 class="">Remove Product</h2>
             <asp:ImageButton
                 runat="server"
@@ -44,8 +47,8 @@
                 width="100px"
                 height="100px"/>
             </div>
-
         </div>
+
     </form>
 </body>
 </html>

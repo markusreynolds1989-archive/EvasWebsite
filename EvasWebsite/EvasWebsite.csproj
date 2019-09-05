@@ -96,6 +96,8 @@
     <Compile Include="App_Data\Business_Layer.cs" />
     <Compile Include="App_Data\Data_Layer.cs" />
     <Compile Include="App_Data\Product.cs" />
+    <Compile Include="App_Data\Transaction.cs" />
+    <Compile Include="App_Data\Customer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,6 +190,9 @@
     <None Include="packages.config" />
     <Content Include="readme.md" />
     <Content Include="Pages\Secret\Secret.html" />
+    <Content Include="Pages\Secret\Secret.elm" />
+    <Content Include="Pages\Secret\elm.json" />
+    <Content Include="Pages\Secret\summary.dat" />
     <None Include="Properties\PublishProfiles\5349-34620.el-alt.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\5349-34620.el-alt.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Deploy.pubxml" />
