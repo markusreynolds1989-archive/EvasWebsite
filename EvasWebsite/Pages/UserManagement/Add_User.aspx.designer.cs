@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EvasWebsite.Pages.UserManagement {
-    
-    
-    public partial class Add_User {
-        
+namespace EvasWebsite.Pages.UserManagement
+{
+
+
+    public partial class Add_User
+    {
+
         /// <summary>
         /// frmAddItem control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace EvasWebsite.Pages.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm frmAddItem;
-        
+
         /// <summary>
         /// txtUserName control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace EvasWebsite.Pages.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
-        
+
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace EvasWebsite.Pages.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
+
         /// <summary>
         /// txtSecurityLevel control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace EvasWebsite.Pages.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSecurityLevel;
-        
+
         /// <summary>
         /// btnAdd control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace EvasWebsite.Pages.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
-        
+
         /// <summary>
         /// lblError control.
         /// </summary>

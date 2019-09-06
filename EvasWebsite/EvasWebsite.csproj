@@ -89,7 +89,11 @@
     <Content Include="Pictures\placeHolderRemovePerson.png" />
     <Content Include="Scripts\boxOffer.js" />
     <Content Include="Scripts\Globals.js" />
-    <Content Include="Scripts\jQuery.js" />
+    <Content Include="Scripts\jquery\core.js" />
+    <Content Include="Scripts\jquery\jquery.js" />
+    <Content Include="Scripts\jquery\jquery.min.js" />
+    <Content Include="Scripts\jquery\jquery.slim.js" />
+    <Content Include="Scripts\jquery\jquery.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +191,7 @@
     <Compile Include="App_Data\Users.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="readme.md" />
     <Content Include="Pages\Secret\Secret.html" />
@@ -201,6 +206,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\jquery\jquery.min.map" />
+    <Content Include="Scripts\jquery\jquery.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
