@@ -36,6 +36,7 @@
                 <asp:TextBox
                     class="form-control"
                     ID="txtUserName"
+                    type ="text"
                     placeholder="Username"
                     runat="server" />
             </div>
@@ -43,6 +44,7 @@
                 <asp:TextBox
                     class="form-control"
                     ID="txtPassword"
+                    type="password"
                     placeholder="Password"
                     runat="server" />
             </div>
@@ -50,22 +52,23 @@
                 <asp:TextBox
                     class="form-control"
                     ID="txtSecurityLevel"
+                    type="number"
                     placeholder="Security Level"
                     runat="server" />
             </div>
             <div class="container">
                 <asp:Button
-                    class="btn btn-success"
-                    ID="btnAdd"
-                    Text="Add"
+                    class ="btn btn-success"
+                    ID ="btnAdd"
+                    Text ="Add"
                     runat="server"
                     OnClick="btnAdd_Click" />
 
-                <input type ="button"
-                    class="btn btn-danger"
-                    id  ="btnClear"
-                    onclick="btnClear_Click()"
-                    value = "Clear"/>
+                <input type     ="button"
+                       class    ="btn btn-danger"
+                       id       ="btnClear"
+                       value    ="Clear"
+                       onclick  ="btnClear_Click()"/>
 
                 <asp:HyperLink
                     class="btn btn-link"
@@ -88,7 +91,12 @@
     <script>
         /* all the inputs are runat server, might need to think about that, turn them into post as a possibilty 
          otherwise onclick will be serverside clearing*/
-        function btnClear_Click() { $("#txtUserName").attr("text",""); $("#txtPassword").attr("text",""); $("#txtSecurityLevel").attr("text","");}
+        function btnClear_Click()
+        {
+            $("#txtUserName").attr("value", "");
+            $("#txtPassword").attr("value", "");
+            $("#txtSecurityLevel").attr("value", "");
+        }
     </script>
 
 </body>
