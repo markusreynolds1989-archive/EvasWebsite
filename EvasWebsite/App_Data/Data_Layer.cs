@@ -141,7 +141,7 @@ namespace EvasWebsite.Data
         }
 
         /* Get Product Query */
-        public static SqlDataReader getProduct()
+        public static bool getProduct()
         {
             SqlConnection conn = new SqlConnection(
                 "Data Source=s08.everleap.com;" +
@@ -158,16 +158,20 @@ namespace EvasWebsite.Data
                     string strSQL = "Select * from tblProducts";
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
-                    SqlDataAdapter data = new SqlDataAdapter();
-                    command.ExecuteReader();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        
+                    }
                     conn.Close();
                     globalMethods.printDebug("SET");
+                    return true;
 
                 }
                 catch (Exception ex)
                 {
                     globalMethods.printDebug($"Get Products Error:\n {ex}");
-                    return null;
+                    return false;
                 }
             }
         }
