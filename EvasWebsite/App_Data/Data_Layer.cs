@@ -159,16 +159,16 @@ namespace EvasWebsite.Data
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     SqlDataReader reader = command.ExecuteReader();
+                    var product = new Product();
                     if (reader.HasRows)
-                    {
-                        var product = new Product();
+                    { 
                         product.Title = reader.GetString(1);
                         product.Description = reader.GetString(2);
                         product.Cost = reader.GetFloat(3);
                         product.Quantity = reader.GetInt32(4);
-                        globalMethods.printDebug(product.ToString());
                     }
                     conn.Close();
+                    globalMethods.printDebug(product.ToString());
                     globalMethods.printDebug("SET");
                     return true;
 
