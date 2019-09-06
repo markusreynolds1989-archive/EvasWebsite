@@ -141,7 +141,7 @@ namespace EvasWebsite.Data
         }
 
         /* Get Product Query */
-        public static string getProduct()
+        public static Product getProduct()
         {
             SqlConnection conn = new SqlConnection(
                 "Data Source=s08.everleap.com;" +
@@ -159,20 +159,24 @@ namespace EvasWebsite.Data
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     SqlDataReader reader = command.ExecuteReader();
-                    string results = "";
+                    var product = new Product();
                     while (reader.Read())
-                    {
-                        results = $"{reader.GetString(1)} {reader.GetString(2)} {reader.GetInt32(3)} {reader.GetString(5)}";
+                    { 
+                        product.Title = reader.GetString(1);
+                        product.Description = reader.GetString(2);
+                        product.Quantity = reader.GetInt32(3);
+                        /*product.Cost = reader.GetFloat(4); <- Why? */
+                        product.PicturePath = reader.GetString(5);
                     }
                     conn.Close();
                     globalMethods.printDebug("SET");
-                    return results;
+                    return product;
 
                 }
                 catch (Exception ex)
                 {
                     globalMethods.printDebug($"Get Products Error:\n {ex}");
-                    return "Failed";
+                    return null;
                 }
             }
         }
