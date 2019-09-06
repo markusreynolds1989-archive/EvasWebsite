@@ -14,17 +14,17 @@
         /* string => string => int => int => string => boolean */
         let Title = $('#txtTitle').val();
         let Description = $('#txtQuantity').val();
+        let quantity = $('#txtQuantity').val();
+        let cost = $('#txtCost').val();
 
         const validation = (title
             , description
             , quantity
-            , cost
-            , picturePath) => {
+            , cost ) => {
             /*use a regex to deteremine if they contain numbers/letters/symbols*/
-            if(title.compare(title, REGEXNUM));
-            if (description == null) {
-                return false;
-            }
+            if (title.compare(title, REGEXNUM));
+            if (description.compare(description.REGEXNUM));
+
             if (quantity == null || quantity == string) {
                 return false;
             }
@@ -36,6 +36,7 @@
                 return true;
             }
         }
+
     </script>
 </head>
 <body>

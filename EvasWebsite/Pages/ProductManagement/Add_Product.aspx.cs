@@ -81,7 +81,8 @@ namespace EvasWebsite.Pages
                 product.Title = txtTitle.Text;
                 product.Description = txtDescription.Text;
                 product.Quantity = Convert.ToInt32(txtQuantity.Text);
-                product.Cost = Convert.ToSingle(txtCost.Text);
+                product.Cost     = Convert.ToSingle(txtCost.Text); /*round to 2 decimal place */
+
                 if (upPicture.HasFile)
                 {
                     product.PicturePath = "~/Pictures/" + upPicture.FileName;
