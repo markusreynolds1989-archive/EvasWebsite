@@ -141,13 +141,13 @@ namespace EvasWebsite.Data
         }
 
         /* Get Product Query */
-        public static bool getProduct()
+        public static string getProduct()
         {
             SqlConnection conn = new SqlConnection(
                 "Data Source=s08.everleap.com;" +
                 "Initial Catalog=DB_5349_evaswebsite;" +
                 "User ID=DB_5349_evaswebsite_user;" +
-                "Password=Sonics.256");
+                "Password=Sonics.256") ;
 
             using (conn)
             {
@@ -159,24 +159,20 @@ namespace EvasWebsite.Data
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     SqlDataReader reader = command.ExecuteReader();
-                    var product = new Product();
-                    if (reader.HasRows)
-                    { 
-                        product.Title = reader.GetString(1);
-                        product.Description = reader.GetString(2);
-                        product.Cost = reader.GetFloat(3);
-                        product.Quantity = reader.GetInt32(4);
+                    string results = "";
+                    while (reader.Read())
+                    {
+                        results = $"{reader.GetString(1)} {reader.GetString(2)} {reader.GetInt32(3)} {reader.GetString(5)}";
                     }
                     conn.Close();
-                    globalMethods.printDebug(product.ToString());
                     globalMethods.printDebug("SET");
-                    return true;
+                    return results;
 
                 }
                 catch (Exception ex)
                 {
                     globalMethods.printDebug($"Get Products Error:\n {ex}");
-                    return false;
+                    return "Failed";
                 }
             }
         }

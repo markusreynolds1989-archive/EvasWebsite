@@ -21,8 +21,7 @@ namespace EvasWebsite.Data
              */
             try
             {
-                Data_Layer.getProduct();
-                return "";
+                return Data_Layer.getProduct();
             }
             catch(Exception ex)
             {
