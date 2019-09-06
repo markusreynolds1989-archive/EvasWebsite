@@ -161,7 +161,12 @@ namespace EvasWebsite.Data
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        
+                        var product = new Product();
+                        product.Title = reader.GetString(1);
+                        product.Description = reader.GetString(2);
+                        product.Cost = reader.GetFloat(3);
+                        product.Quantity = reader.GetInt32(4);
+                        globalMethods.printDebug(product.ToString());
                     }
                     conn.Close();
                     globalMethods.printDebug("SET");
