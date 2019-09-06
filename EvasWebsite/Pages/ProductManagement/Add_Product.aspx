@@ -5,40 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous" />
 
     <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <title>Add Product</title>
-    <script src="../Scripts/jQuery.js"></script>
-    <script>
-        /* Validation Functions, we could also use C# */
-        /* TODO: Finish validation */
-        /* string => string => int => int => string => boolean */
-        let Title = $('#txtTitle').val();
-        let Description = $('#txtQuantity').val();
+    <script src="../../Scripts/jquery/jquery.js"></script>
 
-        const validation = (title
-            , description
-            , quantity
-            , cost
-            , picturePath) => {
-            /*use a regex to deteremine if they contain numbers/letters/symbols*/
-            if (title.compare(title, REGEXNUM));
-            if (description == null) {
-                return false;
-            }
-            if (quantity == null || quantity == string) {
-                return false;
-            }
-            if (cost == null || cost == string) {
-            }
-            if (picturePath == null) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    </script>
 </head>
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no" />
@@ -49,6 +24,7 @@
                 <asp:TextBox
                     class="form-control"
                     ID="txtTitle"
+                    type="text"
                     placeholder="Title"
                     runat="server" />
             </div>
@@ -57,6 +33,7 @@
                     class="form-control"
                     ID="txtDescription"
                     multiline="true"
+                    type="text"
                     TextMode="MultiLine"
                     placeholder="Description"
                     runat="server" />
@@ -65,7 +42,7 @@
                 <asp:TextBox
                     class="form-control"
                     ID="txtQuantity"
-                    multiline="true"
+                    type="number"
                     placeholder="Quantity"
                     runat="server" />
             </div>
@@ -73,6 +50,7 @@
                 <asp:TextBox
                     class="form-control"
                     ID="txtCost"
+                    type="number"
                     placeholder="Cost"
                     runat="server" />
             </div>
@@ -117,7 +95,7 @@
                                 runat="server" />
                         </p>
                         <p>
-                            <label>Cost: </label>
+                            <label>Cost: $ </label>
                             <asp:Label
                                 ID="lblCostPre"
                                 runat="server" />

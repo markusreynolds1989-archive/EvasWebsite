@@ -26,7 +26,7 @@ namespace EvasWebsite.Pages
                     } 
         }
 
-        protected void btnPreview_Click(object sender, EventArgs e)
+        protected void btnPreview_Click(object sender, EventArgs e) /*kill this and make it client side */
         {
             try
             {
@@ -82,7 +82,7 @@ namespace EvasWebsite.Pages
                 product.Description = txtDescription.Text;
                 product.Quantity = Convert.ToInt32(txtQuantity.Text);
                 product.Cost = Convert.ToSingle(txtCost.Text);
-                if (upPicture.HasFile)
+                if (upPicture.HasFile) /*save this item between collections */
                 {
                     product.PicturePath = "~/Pictures/" + upPicture.FileName;
                     upPicture.SaveAs(Server.MapPath(product.PicturePath));

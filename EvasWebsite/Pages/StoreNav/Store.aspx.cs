@@ -9,18 +9,24 @@ using EvasWebsite.Data;
 
 namespace EvasWebsite.Pages
 {
-    public partial class Store : System.Web.UI.Page
+    public partial class Store : Page
     {
+        Product product = new Product();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                string html = Session["addedItem"].ToString();
-                mainStore.Text = html;
+                lblError.Visible = false;
+                mainStore.Text = product.displayProducts();
             }
-            catch
+            catch(Exception ex)
             {
+                lblError.Visible = true;
                 lblError.Text = "No products are available to display at this time.";
+                Debug.WriteLine
+                    ("******ALERT*****\n" +
+                    $"{ex}\n" +
+                    "******ENDALERT*****\n");
             }
         }
     }

@@ -28,3 +28,6 @@ important is how the website looks and feels and then functionality and speed.
 ## Security
 1. Test security implementation
 2. Continue to look at it when interfacing with the 3rd party payment auth
+
+##Accessability
+1. Text for every item
