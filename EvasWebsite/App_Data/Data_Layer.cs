@@ -140,6 +140,44 @@ namespace EvasWebsite.Data
             }
         }
 
+        /* Get Product Query */
+        public static bool getProduct()
+        {
+            SqlConnection conn = new SqlConnection(
+                "Data Source=s08.everleap.com;" +
+                "Initial Catalog=DB_5349_evaswebsite;" +
+                "User ID=DB_5349_evaswebsite_user;" +
+                "Password=Sonics.256");
+
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand command = conn.CreateCommand();
+                    string strSQL = "Select * from tblProducts";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = strSQL;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        
+                    }
+                    conn.Close();
+                    globalMethods.printDebug("SET");
+                    return true;
+
+                }
+                catch (Exception ex)
+                {
+                    globalMethods.printDebug($"Get Products Error:\n {ex}");
+                    return false;
+                }
+            }
+        }
+
+
+
 
         /* Return security level for the user */
         public static int verifyUser(string UserName

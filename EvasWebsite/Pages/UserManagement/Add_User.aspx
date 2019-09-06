@@ -5,16 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Add User</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
-    <script src="../Scripts/jQuery.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <script type = "text/javascript" src ="../../Scripts/jquery/jquery.js"></script>
+
     <script>
         /* Validation Functions, we could also use C# */
         /* TODO: Finish validation */
         /* string => string => int => int => string => boolean */
-        let Title = $('#txtTitle').val();
-        let Description = $('#txtQuantity').val();
-
         const validation = (title
             , description
             , quantity
@@ -29,54 +28,76 @@
     </script>
 </head>
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit = no" />
     <form id="frmAddItem" runat="server">
-        <div class="w3-container w3-center">
-            <h1>Add User</h1>
-            <p>
+        <div class="form-group">
+            <div class="container">
+                <h1>Add User</h1>
                 <asp:TextBox
-                    class="w3-input"
+                    class="form-control"
                     ID="txtUserName"
+                    type ="text"
                     placeholder="Username"
                     runat="server" />
-            </p>
-            <p>
+            </div>
+            <div class="container">
                 <asp:TextBox
-                    class="w3-input"
+                    class="form-control"
                     ID="txtPassword"
+                    type="password"
                     placeholder="Password"
                     runat="server" />
-            </p>
-            <p>
+            </div>
+            <div class="container">
                 <asp:TextBox
-                    class="w3-input"
+                    class="form-control"
                     ID="txtSecurityLevel"
+                    type="number"
                     placeholder="Security Level"
                     runat="server" />
-            </p>
-            <p>
+            </div>
+            <div class="container">
                 <asp:Button
-                    class="w3-btn w3-green w3-round"
-                    ID="btnAdd"
-                    Text="Add"
+                    class ="btn btn-success"
+                    ID ="btnAdd"
+                    Text ="Add"
                     runat="server"
                     OnClick="btnAdd_Click" />
-            </p>
-            <p>
+
+                <input type     ="button"
+                       class    ="btn btn-danger"
+                       id       ="btnClear"
+                       value    ="Clear"
+                       onclick  ="btnClear_Click()"/>
+
                 <asp:HyperLink
-                    class="w3-button w3-grey w3-round"
+                    class="btn btn-link"
                     runat="server"
                     NavigateUrl="~/Pages/UserManagement/User_Management.aspx">
                     User Management
                 </asp:HyperLink>
-            </p>
-            <asp:Label
-                class="w3-panel w3-red"
-                ID="lblError"
-                Text=""
-                runat="server" 
-                visible ="false"/>
+                </div>
+            <br/>
+            <div class="container">
+                <asp:Label
+                    class="alert alert-danger"
+                    ID="lblError"
+                    Text=""
+                    runat="server"/>
+            </div>
         </div>
     </form>
+
+    <script>
+        /* all the inputs are runat server, might need to think about that, turn them into post as a possibilty 
+         otherwise onclick will be serverside clearing*/
+        function btnClear_Click()
+        {
+            $("#txtUserName").attr("value", "");
+            $("#txtPassword").attr("value", "");
+            $("#txtSecurityLevel").attr("value", "");
+        }
+    </script>
+
 </body>
 </html>

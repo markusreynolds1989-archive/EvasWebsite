@@ -1,4 +1,6 @@
-﻿namespace EvasWebsite.Data
+﻿using System;
+
+namespace EvasWebsite.Data
 {
     public class Product
     {
@@ -17,7 +19,16 @@
              * that is HTML that displays our products
              * in a square relative to other squares
              */
-            return "";
+            try
+            {
+                Data_Layer.getProduct();
+                return "";
+            }
+            catch(Exception ex)
+            {
+                globalMethods.printDebug($"Display Products Error:\n {ex}");
+                return "";
+            }
         }
     }
 }
