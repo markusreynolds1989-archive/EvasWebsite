@@ -21,28 +21,29 @@ namespace EvasWebsite.Data
              */
             try
             {
-                globalMethods.printDebug(Data_Layer.getProduct().PicturePath);
+            globalMethods.printDebug(Data_Layer.getProduct().PicturePath);
             string HTML = $@"<div class='container'>
-            <div class='card'>
-                <img
+            <div class='card' style='width: 18rem;'>
+                 <img
                     class='card-img-top'
                     ID='imgPicturePreview'
-                    image src='{Data_Layer.getProduct().PicturePath}'
-                    alt='product image'
-                    Height='300'
-                    widht='100' />
+                    src='{Data_Layer.getProduct().PicturePath}'
+                    alt='product image'/>
+
                 <div class='card-title'>
                     <h5>
                         <label
                                 id = 'lbl{Data_Layer.getProduct().Title}'>
                                 {Data_Layer.getProduct().Title} </label>
                     </h5>
+
                     <div class='card-body'>
                         <p>
                             <label
                                 id = 'lbl{Data_Layer.getProduct().Description}'>
                                 {Data_Layer.getProduct().Description}</label>
                         </p>
+
                         <p>
                             <label>Quantity: </label>
                             <label
@@ -50,6 +51,7 @@ namespace EvasWebsite.Data
                                 {Data_Layer.getProduct().Quantity}</label>
                                 
                         </p>
+
                         <p>
                             <label>Cost: $ </label>
                             <label
@@ -57,6 +59,12 @@ namespace EvasWebsite.Data
                         </p>
                     </div>
                 </div>
+                    <div class = 'container'>
+                        <input type = button
+                        id = '{Data_Layer.getProduct().Title}buy'
+                        class = 'btn btn-success'
+                        value ='Add to Cart'/> 
+                    </div>
             </div>";
             return HTML;
             }
