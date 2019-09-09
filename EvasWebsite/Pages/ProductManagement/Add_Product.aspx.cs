@@ -23,7 +23,8 @@ namespace EvasWebsite.Pages
                if (Session["SecurityLevel"] != "0")
                     {
                         Response.Redirect("~/Pages/Login/Login_Admin.aspx");
-                    } 
+                    }
+            lblError.Visible = false;
         }
 
         protected void btnPreview_Click(object sender, EventArgs e) /*kill this and make it client side */
@@ -56,10 +57,12 @@ namespace EvasWebsite.Pages
                     , product.Cost
                     , product.PicturePath))
                 {
+                    lblError.Visible = true;
                     lblError.Text = "Upload Successful!";
                 }
                 else
                 {
+                    lblError.Visible = true;
                     lblError.Text = "Upload Failed!";
                 }
             }
@@ -89,6 +92,7 @@ namespace EvasWebsite.Pages
                 }
                 else
                 {
+                    lblError.Visible = true;
                     lblError.Text = "Please select a file to upload";
                 }
 

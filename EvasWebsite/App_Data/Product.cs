@@ -27,7 +27,7 @@ namespace EvasWebsite.Data
                  <img
                     class='card-img-top'
                     ID='imgPicturePreview'
-                    src='{Data_Layer.getProduct().PicturePath}'
+                    src={Data_Layer.getProduct().PicturePath}
                     alt='product image'/>
 
                 <div class='card-title'>
