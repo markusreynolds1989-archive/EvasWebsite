@@ -26,7 +26,7 @@ namespace EvasWebsite.Data
         public static bool AddProduct(string Title
             , string Desc
             , int Quant
-            , float Cost
+            , double Cost
             , string Pic)
         {
             bool recordSaved;
@@ -159,6 +159,7 @@ namespace EvasWebsite.Data
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     SqlDataReader reader = command.ExecuteReader();
+                    /* list of Products here using Product Record Template*/
                     List<Product> products = new List<Product>();
                     while (reader.Read())
                     {
@@ -167,9 +168,11 @@ namespace EvasWebsite.Data
                               Title = reader.GetString(1)
                             , Description = reader.GetString(2)
                             , Quantity = reader.GetInt32(3)
+                            , Cost = reader.GetDouble(4)
                             , PicturePath = reader.GetString(5) 
                         } );
                     }
+                    /* we need to consider how this is set up here */
                     conn.Close();
                     globalMethods.printDebug("SET");
                     return products;

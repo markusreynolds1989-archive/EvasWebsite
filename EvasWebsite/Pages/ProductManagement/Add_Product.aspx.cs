@@ -84,10 +84,11 @@ namespace EvasWebsite.Pages
                 product.Title = txtTitle.Text;
                 product.Description = txtDescription.Text;
                 product.Quantity = Convert.ToInt32(txtQuantity.Text);
-                product.Cost = Convert.ToSingle(txtCost.Text);
+                product.Cost = Convert.ToDouble(txtCost.Text);
+
                 if (upPicture.HasFile) /*save this item between collections */
                 {
-                    product.PicturePath = "~/Pictures/" + upPicture.FileName;
+                    product.PicturePath = "/Pictures/" + upPicture.FileName;
                     upPicture.SaveAs(Server.MapPath(product.PicturePath));
                 }
                 else

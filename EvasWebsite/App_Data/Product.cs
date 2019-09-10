@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Data_Layer Class for SQL Functionality
+//Programmed by: Markus Reynolds
+//08/31/2019
+using System;
 
 namespace EvasWebsite.Data
 {
@@ -8,7 +11,7 @@ namespace EvasWebsite.Data
         public string Title { get; set; }
         public string Description { get; set; }
         public int Quantity { get; set; }
-        public float Cost { get; set; }
+        public double Cost { get; set; }
         public bool Available { get; set; }
         public string PicturePath { get; set; }
 
@@ -16,6 +19,7 @@ namespace EvasWebsite.Data
         public string displayProducts(string Title
                                     , string Description
                                     , int Quantity
+                                    , double Cost
                                     , string PicturePath)
         {
             /* Create a string
@@ -55,9 +59,9 @@ namespace EvasWebsite.Data
                         </p>
 
                         <p>
-                            <label>Cost: $ </label>
+                            <label>Cost: ${Cost} </label>
                             <label
-                                ID = 'lblCostPre' </label>
+                                ID = 'lbl{Cost}' </label>
                         </p>
                     </div>
                 </div>

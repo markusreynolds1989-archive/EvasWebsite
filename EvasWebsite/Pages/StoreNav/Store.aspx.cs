@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Data_Layer Class for SQL Functionality
+//Programmed by: Markus Reynolds
+//08/31/2019
+
+using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +28,7 @@ namespace EvasWebsite.Pages
                     mainStore.Text += (product.displayProducts(item.Title
                         , item.Description
                         , item.Quantity
+                        , item.Cost
                         , item.PicturePath));
                 }
             }
