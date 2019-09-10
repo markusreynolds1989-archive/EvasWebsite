@@ -18,16 +18,15 @@
         and signs them up for a news letter
         same thing for when they pay
     -->
-</head>
-<body>
+</head> 
+<body>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no" />
     <form id="frmStore" runat="server">
         <div class="cotainer" id="product_holder">
-            <div class="container">
                 <asp:Literal
                     runat="server"
-                    ID="mainStore">
+                    id="mainStore">
                 </asp:Literal>
-            </div>
         </div>
         <div class="container">
             <asp:Label

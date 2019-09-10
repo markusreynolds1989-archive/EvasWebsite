@@ -17,7 +17,7 @@
 </head>
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no" />
-    <form id="frmAddItem" runat="server">
+    <form id="frmAddItem" runat ="server">
         <div class="form-group">
             <div class="container">
                 <h1>Add Item</h1>
@@ -31,6 +31,7 @@
             <div class="container">
                 <asp:TextBox
                     class="form-control"
+                    row ="5"
                     ID="txtDescription"
                     multiline="true"
                     type="text"

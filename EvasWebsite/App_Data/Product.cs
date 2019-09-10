@@ -13,7 +13,10 @@ namespace EvasWebsite.Data
         public string PicturePath { get; set; }
 
 
-        public string displayProducts()
+        public string displayProducts(string Title
+                                    , string Description
+                                    , int Quantity
+                                    , string PicturePath)
         {
             /* Create a string
              * that is HTML that displays our products
@@ -21,34 +24,33 @@ namespace EvasWebsite.Data
              */
             try
             {
-            globalMethods.printDebug(Data_Layer.getProduct().PicturePath);
-            string HTML = $@"<div class='container'>
+                string HTML = $@"<div class='container'>
             <div class='card' style='width: 18rem;'>
                  <img
                     class='card-img-top'
-                    ID='imgPicturePreview'
-                    src={Data_Layer.getProduct().PicturePath}
+                    ID='img{PicturePath}'
+                    src={PicturePath}
                     alt='product image'/>
 
                 <div class='card-title'>
                     <h5>
                         <label
-                                id = 'lbl{Data_Layer.getProduct().Title}'>
-                                {Data_Layer.getProduct().Title} </label>
+                                id = 'lbl{Title}'>
+                                {Title} </label>
                     </h5>
 
                     <div class='card-body'>
                         <p>
                             <label
-                                id = 'lbl{Data_Layer.getProduct().Description}'>
-                                {Data_Layer.getProduct().Description}</label>
+                                id = 'lbl{Description}'>
+                                {Description}</label>
                         </p>
 
                         <p>
                             <label>Quantity: </label>
                             <label
-                                ID = 'lbl{Data_Layer.getProduct().Quantity}'>
-                                {Data_Layer.getProduct().Quantity}</label>
+                                ID = 'lbl{Quantity}'>
+                                {Quantity}</label>
                                 
                         </p>
 
@@ -61,14 +63,16 @@ namespace EvasWebsite.Data
                 </div>
                     <div class = 'container'>
                         <input type = button
-                        id = '{Data_Layer.getProduct().Title}buy'
+                        id = '{Title}buy'
                         class = 'btn btn-success'
                         value ='Add to Cart'/> 
                     </div>
-            </div>";
-            return HTML;
+                </div>
+            </div>
+            </br>";
+                return HTML;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 globalMethods.printDebug($"Display Products Error:\n {ex}");
                 return "";

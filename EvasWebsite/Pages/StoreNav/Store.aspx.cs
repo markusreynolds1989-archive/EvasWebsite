@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EvasWebsite.Data;
+using System.Text;
 
 namespace EvasWebsite.Pages
 {
@@ -17,7 +18,14 @@ namespace EvasWebsite.Pages
             try
             {
                 lblError.Visible = false;
-                mainStore.Text = product.displayProducts();
+                mainStore.Text = "<div class = 'row'> <div class = 'col-sm-4'>";
+                foreach (Product item in Data_Layer.getProduct())
+                {
+                    mainStore.Text += (product.displayProducts(item.Title
+                        , item.Description
+                        , item.Quantity
+                        , item.PicturePath));
+                }
             }
             catch(Exception ex)
             {
@@ -29,5 +37,7 @@ namespace EvasWebsite.Pages
                     "******ENDALERT*****\n");
             }
         }
+
+        
     }
 }

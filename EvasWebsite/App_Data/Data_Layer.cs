@@ -141,7 +141,7 @@ namespace EvasWebsite.Data
         }
 
         /* Get Product Query */
-        public static Product getProduct()
+        public static List<Product> getProduct()
         {
             SqlConnection conn = new SqlConnection(
                 "Data Source=s08.everleap.com;" +
@@ -159,18 +159,20 @@ namespace EvasWebsite.Data
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     SqlDataReader reader = command.ExecuteReader();
-                    var product = new Product();
+                    List<Product> products = new List<Product>();
                     while (reader.Read())
-                    { 
-                        product.Title = reader.GetString(1);
-                        product.Description = reader.GetString(2);
-                        product.Quantity = reader.GetInt32(3);
-                        /*product.Cost = reader.GetFloat(4); <- Why? */
-                        product.PicturePath = reader.GetString(5);
+                    {
+                        products.Add(new Product 
+                        { 
+                              Title = reader.GetString(1)
+                            , Description = reader.GetString(2)
+                            , Quantity = reader.GetInt32(3)
+                            , PicturePath = reader.GetString(5) 
+                        } );
                     }
                     conn.Close();
                     globalMethods.printDebug("SET");
-                    return product;
+                    return products;
 
                 }
                 catch (Exception ex)
