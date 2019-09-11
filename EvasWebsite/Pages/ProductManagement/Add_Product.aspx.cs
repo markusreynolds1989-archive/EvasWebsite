@@ -50,7 +50,7 @@ namespace EvasWebsite.Pages
             try
             {
                 captureData();
-                if (Data_Layer.AddProduct
+                if (Product_Functions.AddProduct
                     (product.Title
                     , product.Description
                     , product.Quantity
