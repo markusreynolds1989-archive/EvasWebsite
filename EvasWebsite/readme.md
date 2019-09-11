@@ -33,4 +33,4 @@ important is how the website looks and feels and then functionality and speed.
 1. Text for every item
 
 ##Testing
-1. Implement Test Based design 
+1. <del>Implement Test Based design</del>
