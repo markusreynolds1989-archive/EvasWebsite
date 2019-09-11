@@ -5,7 +5,7 @@ using System.Web;
 
 namespace EvasWebsite
 {
-    public class Transaction
+    public class Record_Transaction
     {
     }
 }

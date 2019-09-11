@@ -131,7 +131,7 @@
     <Compile Include="App_Data\Business_Layer.cs" />
     <Compile Include="App_Data\Data_Layer.cs" />
     <Compile Include="App_Data\Records\Record_Product.cs" />
-    <Compile Include="App_Data\Transaction.cs" />
+    <Compile Include="App_Data\Records\Record_Transaction.cs" />
     <Compile Include="App_Data\Customer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,7 +228,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\Users.cs" />
+    <Compile Include="App_Data\Records\Record_User.cs" />
     <Compile Include="Tests\DatabaseTests.cs" />
   </ItemGroup>
   <ItemGroup>

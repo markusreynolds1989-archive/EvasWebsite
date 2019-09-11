@@ -10,7 +10,7 @@ namespace EvasWebsite.Pages.UserManagement
 {
     public partial class Add_User : System.Web.UI.Page
     {
-        Users user = new Users();
+        Record_User user = new Record_User();
 
         protected void Page_Load(object sender, EventArgs e)
         {

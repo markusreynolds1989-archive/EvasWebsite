@@ -10,7 +10,7 @@ namespace EvasWebsite.Pages
 {
     public partial class Login_Admin : System.Web.UI.Page
     {
-        Users currentUser = new Users();
+        Record_User currentUser = new Record_User();
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace EvasWebsite.Data
 {
-    public class Users
+    public class Record_User
     {
         public int userID { get; set; }
         public string userName { get; set; }
