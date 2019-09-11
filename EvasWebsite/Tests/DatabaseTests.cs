@@ -10,16 +10,11 @@ namespace EvasWebsite.Tests
     [TestClass]
     public class DatabaseTests
     {
+        /*
         [TestMethod]
-        public void addProductTest()
+        public void testModifyProduct()
         {
-            Assert.IsTrue(Data_Layer.AddProduct("test", "test", 2, 2, "test"));
-        }
-
-        [TestMethod]
-        public void addUserTest()
-        {
-            Assert.IsTrue(Data_Layer.AddUser("test", "test", 0));
-        }
+            Assert.IsTrue(Product_Functions.modifyProduct(12, "Test", "Test" , 2, 3, "Test"));
+        }*/
     }
 }

@@ -108,6 +108,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Pages\Login\Login_Admin.aspx" />
     <Content Include="Pages\Login\Login_Customer.aspx" />
+    <Content Include="Pages\ProductManagement\Modify_Product.aspx" />
     <Content Include="Pages\ProductManagement\Product_Management.aspx" />
     <Content Include="Pages\Secret\Secret.js" />
     <Content Include="Pages\StoreNav\Store.aspx" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="Pages\Login\Login_Customer.aspx.designer.cs">
       <DependentUpon>Login_Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductManagement\Modify_Product.aspx.cs">
+      <DependentUpon>Modify_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductManagement\Modify_Product.aspx.designer.cs">
+      <DependentUpon>Modify_Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductManagement\Product_Management.aspx.cs">
       <DependentUpon>Product_Management.aspx</DependentUpon>

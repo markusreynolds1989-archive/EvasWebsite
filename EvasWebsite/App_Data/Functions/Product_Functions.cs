@@ -10,6 +10,133 @@ namespace EvasWebsite
 {
     public class Product_Functions
     {
+        /* Add Product Query */
+        public static bool AddProduct(string Title
+           , string Desc
+           , int Quant
+           , double Cost
+           , string Pic)
+        {
+            bool recordSaved;
+
+            SqlTransaction myTransaction = null;
+
+            SqlConnection conn = new SqlConnection(
+                "Data Source=s08.everleap.com;" +
+                "Initial Catalog=DB_5349_evaswebsite;" +
+                "User ID=DB_5349_evaswebsite_user;" +
+                "Password=Sonics.256");
+
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand command = conn.CreateCommand();
+                    myTransaction = conn.BeginTransaction();
+                    command.Transaction = myTransaction;
+                    string strSQL = "Insert into tblProducts (Title, Description, Quant, Cost, Picture, Updt_dt_tm)" +
+                        $"values(@Title,@Desc,@Quant,@Cost,@Pic,CURRENT_TIMESTAMP)";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = strSQL;
+                    command.Parameters.AddWithValue("@Title", Title);
+                    command.Parameters.AddWithValue("@Desc", Desc);
+                    command.Parameters.AddWithValue("@Quant", Quant);
+                    command.Parameters.AddWithValue("@Cost", Cost);
+                    command.Parameters.AddWithValue("@Pic", Pic);
+                    command.ExecuteNonQuery();
+                    myTransaction.Commit();
+                    conn.Close();
+                    recordSaved = true;
+                    System.Diagnostics.Debug.WriteLine(
+                        "*********ALERT*********\n" +
+                        "Uploaded\n" +
+                        "**********ENDALERT******\n)");
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(
+                        "\n***********ALERT*********" +
+                        "\nAdd_Products Error:\n" +
+                        ex.ToString() +
+                        "\n ******ENDALERT*********");
+
+                    myTransaction.Rollback();
+                    recordSaved = false;
+                }
+                return recordSaved;
+            }
+        }
+
+        public static bool modifyProduct(int ProductID
+           , string Title
+           , string Desc
+           , int Quant
+           , double Cost
+           , string Pic)
+        {
+            bool recordSaved;
+
+            SqlTransaction myTransaction = null;
+
+            SqlConnection conn = new SqlConnection(
+                "Data Source=s08.everleap.com;" +
+                "Initial Catalog=DB_5349_evaswebsite;" +
+                "User ID=DB_5349_evaswebsite_user;" +
+                "Password=Sonics.256");
+
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand command = conn.CreateCommand();
+                    myTransaction = conn.BeginTransaction();
+                    command.Transaction = myTransaction;
+
+                    /*SQL String */
+                    string strSQL = 
+                        $@"Update tblProducts set
+                        Title = @Title 
+                        , Description = @Desc
+                        , Quant = @Quant
+                        , Cost = @Cost
+                        , Picture = @Pic
+                        , Updt_dt_tm = CURRENT_TIMESTAMP
+                        where Id = @ProductID";
+
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = strSQL;
+                    command.Parameters.AddWithValue("@ProductID", ProductID);
+                    command.Parameters.AddWithValue("@Title", Title);
+                    command.Parameters.AddWithValue("@Desc", Desc);
+                    command.Parameters.AddWithValue("@Quant", Quant);
+                    command.Parameters.AddWithValue("@Cost", Cost);
+                    command.Parameters.AddWithValue("@Pic", Pic);
+                    command.ExecuteNonQuery();
+                    myTransaction.Commit();
+                    conn.Close();
+                    recordSaved = true;
+                    System.Diagnostics.Debug.WriteLine(
+                        "*********ALERT*********\n" +
+                        "Uploaded\n" +
+                        "**********ENDALERT******\n)");
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(
+                        "\n***********ALERT*********" +
+                        "\nModify_Products Error:\n" +
+                        ex.ToString() +
+                        "\n ******ENDALERT*********");
+
+                    myTransaction.Rollback();
+                    recordSaved = false;
+                }
+                return recordSaved;
+            }
+        }
+
         /* Get Product Query */
         public static List<Product> getProduct()
         {
@@ -35,6 +162,8 @@ namespace EvasWebsite
                     {
                         products.Add(new Product
                         {
+                            productID = reader.GetInt32(0)
+                            ,
                             Title = reader.GetString(1)
                             ,
                             Description = reader.GetString(2)
@@ -46,7 +175,6 @@ namespace EvasWebsite
                             PicturePath = reader.GetString(5)
                         });
                     }
-                    /* we need to consider how this is set up here */
                     conn.Close();
                     globalMethods.printDebug("SET");
                     return products;
@@ -60,7 +188,39 @@ namespace EvasWebsite
             }
         }
 
+        /* create a table for modification */
+        public string tableProducts(int ProductID
+                                    , string Title
+                                    , string Description
+                                    , int Quantity
+                                    , double Cost
+                                    , string PicturePath)
+        {
+            try
+            {
+                string table = $@"
+                    <tr>
+                        <th scope='row'><asp:Button class = 'btn btn-primary' runat='server'>Modify</button></th>
+                        <td> <button class='btn btn-danger'>Delete </button></td>
+                        <td> {ProductID}</td>
+                        <td> <input type = 'text' class='form-control' placeholder= '{Title}'/> </td>
+                        <td> <input type = 'text' class='form-control' placeholder= '{Description}'/> </td>
+                        <td> <input type = 'text' class='form-control' placeholder= '{Quantity}'/> </td>
+                        <td> <input type = 'text' class='form-control' placeholder= '{Cost}'/> </td>
+                        <td> <input type = 'text' class='form-control' placeholder= '{PicturePath}'/> </td>
+                   </tr>
+                ";
+                return table;
+            }
+            catch (Exception ex)
+            {
+                globalMethods.printDebug($"Display Table Error:\n {ex}");
+                return "";
+            }
+        }
+
         /* display product function */
+
         public string displayProducts(string Title
                                     , string Description
                                     , int Quantity
