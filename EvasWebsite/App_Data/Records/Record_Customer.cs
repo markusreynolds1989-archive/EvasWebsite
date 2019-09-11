@@ -5,7 +5,7 @@ using System.Web;
 
 namespace EvasWebsite
 {
-    public class Customer
+    public class Record_Customer
     {
     }
 }

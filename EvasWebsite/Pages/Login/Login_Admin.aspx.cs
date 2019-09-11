@@ -21,7 +21,7 @@ namespace EvasWebsite.Pages
         {
             try
             {
-                currentUser.securityLevel = Data_Layer.verifyUser(AdminLogin.UserName,currentUser.encryptPassword(AdminLogin.Password));
+                currentUser.securityLevel = Functions_Users.verifyUser(AdminLogin.UserName,currentUser.encryptPassword(AdminLogin.Password));
                 System.Diagnostics.Debug.WriteLine(currentUser.securityLevel);
 
                 switch (currentUser.securityLevel)

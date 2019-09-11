@@ -132,7 +132,7 @@
     <Compile Include="App_Data\Data_Layer.cs" />
     <Compile Include="App_Data\Records\Record_Product.cs" />
     <Compile Include="App_Data\Records\Record_Transaction.cs" />
-    <Compile Include="App_Data\Customer.cs" />
+    <Compile Include="App_Data\Records\Record_Customer.cs" />
     <Compile Include="App_Data\Functions\Functions_Transaction.cs" />
     <Compile Include="App_Data\Functions\Functions_Users.cs" />
     <Compile Include="Global.asax.cs">

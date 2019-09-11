@@ -26,7 +26,7 @@ namespace EvasWebsite.Pages.UserManagement
             try
             {
                 collectData();
-                if (Data_Layer.AddUser(user.userName, user.Password, user.securityLevel))
+                if (Functions_Users.AddUser(user.userName, user.Password, user.securityLevel))
                 {
                     lblError.Text = "Add Complete.";
                     System.Diagnostics.Debug.WriteLine("\n*******ALERT******\n" +
