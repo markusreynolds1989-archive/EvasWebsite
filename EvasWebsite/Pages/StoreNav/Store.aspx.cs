@@ -19,9 +19,9 @@ namespace EvasWebsite.Pages
     {
 
         /* create the objects */
-        Product product = new Product(); /* object of product record */
+        Record_Product product = new Record_Product(); /* object of product record */
 
-        Product_Functions product_functions = new Product_Functions(); /* functions of product */
+        Functions_Product product_functions = new Functions_Product(); /* functions of product */
         /*end objects */
         
 
@@ -37,7 +37,7 @@ namespace EvasWebsite.Pages
             try
             {
                 lblError.Visible = false;
-                foreach (Product item in Product_Functions.getProduct())
+                foreach (Record_Product item in Functions_Product.getProduct())
                 {
                     mainStore.Text += (product_functions.displayProducts(
                           item.Title

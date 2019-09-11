@@ -9,10 +9,10 @@ namespace EvasWebsite.Pages
 {
     public partial class Add_Item : System.Web.UI.Page
     {
-        /* new object of the Product class in the app_data 
+        /* new object of the Record_Product class in the app_data 
          * Use it here to keep OOP going correctly
          */
-        Product product = new Product();
+        Record_Product product = new Record_Product();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,7 +50,7 @@ namespace EvasWebsite.Pages
             try
             {
                 captureData();
-                if (Product_Functions.AddProduct
+                if (Functions_Product.AddProduct
                     (product.Title
                     , product.Description
                     , product.Quantity

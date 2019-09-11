@@ -8,9 +8,9 @@ using EvasWebsite.Data;
 
 namespace EvasWebsite
 {
-    public class Product_Functions
+    public class Functions_Product
     {
-        /* Add Product Query */
+        /* Add Record_Product Query */
         public static bool AddProduct(string Title
            , string Desc
            , int Quant
@@ -137,8 +137,8 @@ namespace EvasWebsite
             }
         }
 
-        /* Get Product Query */
-        public static List<Product> getProduct()
+        /* Get Record_Product Query */
+        public static List<Record_Product> getProduct()
         {
             SqlConnection conn = new SqlConnection(
                 "Data Source=s08.everleap.com;" +
@@ -156,11 +156,11 @@ namespace EvasWebsite
                     command.CommandType = CommandType.Text;
                     command.CommandText = strSQL;
                     SqlDataReader reader = command.ExecuteReader();
-                    /* list of Products here using Product Record Template*/
-                    List<Product> products = new List<Product>();
+                    /* list of Products here using Record_Product Record Template*/
+                    List<Record_Product> products = new List<Record_Product>();
                     while (reader.Read())
                     {
-                        products.Add(new Product
+                        products.Add(new Record_Product
                         {
                             productID = reader.GetInt32(0)
                             ,

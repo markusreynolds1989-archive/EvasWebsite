@@ -6,7 +6,7 @@ using System;
 namespace EvasWebsite.Data
 {
     /* record */
-    public class Product
+    public class Record_Product
     {
         public int productID { get; set; }
         public string Title { get; set; }

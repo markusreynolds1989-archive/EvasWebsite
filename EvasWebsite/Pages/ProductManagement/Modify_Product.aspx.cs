@@ -11,8 +11,8 @@ namespace EvasWebsite.Pages.ProductManagement
 {
     public partial class Modify_Product : System.Web.UI.Page
     {
-        Product product = new Product();
-        Product_Functions product_functions = new Product_Functions();
+        Record_Product product = new Record_Product();
+        Functions_Product product_functions = new Functions_Product();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace EvasWebsite.Pages.ProductManagement
             {
                 try
                 {
-                    foreach (Product item in Product_Functions.getProduct())
+                    foreach (Record_Product item in Functions_Product.getProduct())
                     {
                         productTable.Text += (product_functions.tableProducts(
                               item.productID

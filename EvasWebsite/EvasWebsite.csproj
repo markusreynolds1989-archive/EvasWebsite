@@ -130,7 +130,7 @@
   <ItemGroup>
     <Compile Include="App_Data\Business_Layer.cs" />
     <Compile Include="App_Data\Data_Layer.cs" />
-    <Compile Include="App_Data\Records\Product.cs" />
+    <Compile Include="App_Data\Records\Record_Product.cs" />
     <Compile Include="App_Data\Transaction.cs" />
     <Compile Include="App_Data\Customer.cs" />
     <Compile Include="Global.asax.cs">
@@ -221,7 +221,7 @@
     <Compile Include="Pages\UserManagement\User_Management.aspx.designer.cs">
       <DependentUpon>User_Management.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\Functions\Product_Functions.cs" />
+    <Compile Include="App_Data\Functions\Functions_Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

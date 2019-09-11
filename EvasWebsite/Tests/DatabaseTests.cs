@@ -14,7 +14,7 @@ namespace EvasWebsite.Tests
         [TestMethod]
         public void testModifyProduct()
         {
-            Assert.IsTrue(Product_Functions.modifyProduct(12, "Test", "Test" , 2, 3, "Test"));
+            Assert.IsTrue(Functions_Product.modifyProduct(12, "Test", "Test" , 2, 3, "Test"));
         }*/
     }
 }
