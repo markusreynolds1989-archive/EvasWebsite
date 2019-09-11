@@ -1,22 +1,66 @@
-﻿//Data_Layer Class for SQL Functionality
-//Programmed by: Markus Reynolds
-//08/31/2019
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using EvasWebsite.Data;
 
-namespace EvasWebsite.Data
+namespace EvasWebsite
 {
-    /* record */
-    public class Product
+    public class Product_Functions
     {
-        public int productID { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public int Quantity { get; set; }
-        public double Cost { get; set; }
-        public bool Available { get; set; }
-        public string PicturePath { get; set; }
+        /* Get Product Query */
+        public static List<Product> getProduct()
+        {
+            SqlConnection conn = new SqlConnection(
+                "Data Source=s08.everleap.com;" +
+                "Initial Catalog=DB_5349_evaswebsite;" +
+                "User ID=DB_5349_evaswebsite_user;" +
+                "Password=Sonics.256");
 
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand command = conn.CreateCommand();
+                    string strSQL = "Select * from tblProducts";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = strSQL;
+                    SqlDataReader reader = command.ExecuteReader();
+                    /* list of Products here using Product Record Template*/
+                    List<Product> products = new List<Product>();
+                    while (reader.Read())
+                    {
+                        products.Add(new Product
+                        {
+                            Title = reader.GetString(1)
+                            ,
+                            Description = reader.GetString(2)
+                            ,
+                            Quantity = reader.GetInt32(3)
+                            ,
+                            Cost = reader.GetDouble(4)
+                            ,
+                            PicturePath = reader.GetString(5)
+                        });
+                    }
+                    /* we need to consider how this is set up here */
+                    conn.Close();
+                    globalMethods.printDebug("SET");
+                    return products;
 
+                }
+                catch (Exception ex)
+                {
+                    globalMethods.printDebug($"Get Products Error:\n {ex}");
+                    return null;
+                }
+            }
+        }
+
+        /* display product function */
         public string displayProducts(string Title
                                     , string Description
                                     , int Quantity
