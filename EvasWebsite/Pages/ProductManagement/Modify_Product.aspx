@@ -32,9 +32,41 @@
         <div class ="container">
             <asp:TextBox
                 class ="form-control-inline"
+                placeholder ="ID"
                 id ="txtID"
                 type="number"
+                runat="server" OnTextChanged="txtID_TextChanged" />
+            <asp:TextBox
+                class ="form-control-inline"
+                placeholder ="Title"
+                id ="txtTitle"
+                type="text"
                 runat="server" />
+            <asp:TextBox
+                class ="form-control-inline"
+                placeholder ="Description"
+                id ="txtDesc"
+                type="text"
+                runat="server" />
+            <asp:TextBox
+                class ="form-control-inline"
+                placeholder ="Quantity"
+                id ="txtQuan"
+                type="number"
+                runat="server" />
+            <asp:TextBox
+                class ="form-control-inline"
+                placeholder ="Cost"
+                id ="txtCost"
+                type="number"
+                runat="server" />
+            <asp:FileUpload
+                class ="form-control-file"
+                id ="upPicture"
+                type="number"
+                runat="server" />
+            </div>
+            <div class ="container">
             <asp:Button
                 class ="btn btn-primary"
                 id ="btnModify"
@@ -47,7 +79,7 @@
                 text ="Delete"
                 OnClick ="btnDelete_Click"
                 runat="server" />
-        </div>
+                </div>
         </form>
 </body>
 </html>

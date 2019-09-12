@@ -203,11 +203,11 @@ namespace EvasWebsite
                         <th scope='row'>
                         {ProductID}
                         </th>
-                        <td> <input type = 'text' class='form-control' value = '{Title}'/> </td>
-                        <td> <input type = 'text' class='form-control' value = '{Description}'/> </td>
-                        <td> <input type = 'text' class='form-control' value = '{Quantity}'/> </td>
-                        <td> <input type = 'text' class='form-control' value = '{Cost}'/> </td>
-                        <td> <img class='img-thumbnail' src = '{PicturePath}'/><input type = 'file' class='formcontrolfile' </td>
+                        <td> {Title} </td>
+                        <td> {Description} </td>
+                        <td> {Quantity} </td>
+                        <td> {Cost} </td>
+                        <td> <img class='img-thumbnail' src = '{PicturePath}'/> </td>
                    </tr>
                 ";
                 return table;
