@@ -29,6 +29,25 @@
                     runat="server" />
             </table>
         </div>
-    </form>
+        <div class ="container">
+            <asp:TextBox
+                class ="form-control-inline"
+                id ="txtID"
+                type="number"
+                runat="server" />
+            <asp:Button
+                class ="btn btn-primary"
+                id ="btnModify"
+                text ="Modify"
+                OnClick ="btnModify_Click"
+                runat="server" />
+            <asp:Button
+                class ="btn btn-danger"
+                id ="btnDelete"
+                text ="Delete"
+                OnClick ="btnDelete_Click"
+                runat="server" />
+        </div>
+        </form>
 </body>
 </html>

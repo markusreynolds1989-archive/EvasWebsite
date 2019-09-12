@@ -16,11 +16,23 @@ namespace EvasWebsite.Pages.ProductManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            productTable.Text = @"
+            
+            /*if (Session["SecurityLevel"] != "0")
+            {
+                Response.Redirect("~/Pages/Login/Login_Admin.aspx");
+            }*/
+            /* load a table of the current product */
+            fillTable();
+        }
+
+        /* this function combines the product list with the HTML to turn it into a table */
+        public void fillTable()
+        {
+            {
+                productTable.Text = @"
+            <div class = 'container'>
                 <thead>
                     <tr>
-                        <th scope = 'col'>Commit Modify</th>
-                        <th scope = 'col'>Delete</th>
                         <th scope = 'col'>ID</th>
                         <th scope = 'col'>Title</th>
                         <th scope = 'col'>Description</th>
@@ -30,18 +42,6 @@ namespace EvasWebsite.Pages.ProductManagement
                     </tr>
                 </thead>
                 <tbody>";
-            /*if (Session["SecurityLevel"] != "0")
-            {
-                Response.Redirect("~/Pages/Login/Login_Admin.aspx");
-            }*/
-            /* load a table of the current product */
-            fillTable();
-            productTable.Text += "</tbody>";
-        }
-
-        public void fillTable()
-        {
-            {
                 try
                 {
                     foreach (Record_Product item in Functions_Product.getProduct())
@@ -54,6 +54,7 @@ namespace EvasWebsite.Pages.ProductManagement
                             , item.Cost
                             , item.PicturePath));
                     }
+                    productTable.Text += "</tbody></div>";
                 }
                 catch (Exception ex)
                 {
@@ -64,5 +65,49 @@ namespace EvasWebsite.Pages.ProductManagement
                 }
             }
         }
+
+        protected void btnModify_Click(object sender, EventArgs e)
+        {
+            txtID.Text = null;
+            
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+        /*
+        public void captureData()
+        {
+            /* Js validation should take care of most of the heavy
+             * lifting for us, but the try is there nonetheless
+             * This method appears to be perfect
+
+            try
+            {
+                product.Title = ;
+                product.Description = txtDescription.Text;
+                product.Quantity = Convert.ToInt32(txtQuantity.Text);
+                product.Cost = Convert.ToDouble(txtCost.Text);
+
+                if (upPicture.HasFile) /*save this item between collections 
+                {
+                    product.PicturePath = "/Pictures/" + upPicture.FileName;
+                    upPicture.SaveAs(Server.MapPath(product.PicturePath));
+                }
+                else
+                {
+                    lblError.Visible = true;
+                    lblError.Text = "Please select a file to upload";
+                }
+
+                System.Diagnostics.Debug.WriteLine($"\nAddTest: {product.Title} \n{product.Description} \n{product.Quantity} \n{product.Cost} \n{product.PicturePath} \n");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error Occured in captureData(): " + ex.ToString() + "\n");
+            }
+        }
+    */
     }
 }

@@ -200,14 +200,14 @@ namespace EvasWebsite
             {
                 string table = $@"
                     <tr>
-                        <th scope='row'><asp:Button class = 'btn btn-primary' runat='server'>Modify</button></th>
-                        <td> <button class='btn btn-danger'>Delete </button></td>
-                        <td> {ProductID}</td>
-                        <td> <input type = 'text' class='form-control' placeholder= '{Title}'/> </td>
-                        <td> <input type = 'text' class='form-control' placeholder= '{Description}'/> </td>
-                        <td> <input type = 'text' class='form-control' placeholder= '{Quantity}'/> </td>
-                        <td> <input type = 'text' class='form-control' placeholder= '{Cost}'/> </td>
-                        <td> <input type = 'text' class='form-control' placeholder= '{PicturePath}'/> </td>
+                        <th scope='row'>
+                        {ProductID}
+                        </th>
+                        <td> <input type = 'text' class='form-control' value = '{Title}'/> </td>
+                        <td> <input type = 'text' class='form-control' value = '{Description}'/> </td>
+                        <td> <input type = 'text' class='form-control' value = '{Quantity}'/> </td>
+                        <td> <input type = 'text' class='form-control' value = '{Cost}'/> </td>
+                        <td> <img class='img-thumbnail' src = '{PicturePath}'/><input type = 'file' class='formcontrolfile' </td>
                    </tr>
                 ";
                 return table;
