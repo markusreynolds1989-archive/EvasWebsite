@@ -134,7 +134,7 @@
     <Compile Include="App_Data\Records\Record_Transaction.cs" />
     <Compile Include="App_Data\Records\Record_Customer.cs" />
     <Compile Include="App_Data\Functions\Functions_Transaction.cs" />
-    <Compile Include="App_Data\Functions\Functions_Users.cs" />
+    <Compile Include="App_Data\Functions\Functions_User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

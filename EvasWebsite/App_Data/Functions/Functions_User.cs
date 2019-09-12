@@ -7,7 +7,7 @@ using System.Web;
 
 namespace EvasWebsite
 {
-    public class Functions_Users
+    public class Functions_User
     {
         public static bool AddUser(string UserName
             , string Password
