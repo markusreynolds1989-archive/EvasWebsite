@@ -35,7 +35,7 @@
                 placeholder ="ID"
                 id ="txtID"
                 type="number"
-                runat="server" OnTextChanged="txtID_TextChanged" />
+                runat="server" OnTextChanged="txtID_TextChanged" AutoPostBack="True" />
             <asp:TextBox
                 class ="form-control-inline"
                 placeholder ="Title"

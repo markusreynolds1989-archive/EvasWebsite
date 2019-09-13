@@ -10,6 +10,7 @@ namespace EvasWebsite
 {
     public class Functions_Product
     {
+
         /* Add Record_Product Query */
         public static bool AddProduct(string Title
            , string Desc
@@ -137,6 +138,46 @@ namespace EvasWebsite
             }
         }
 
+        public static Record_Product getOneProductById(int ProductID)
+        {
+            SqlConnection conn = new SqlConnection(
+                "Data Source=s08.everleap.com;" +
+                "Initial Catalog=DB_5349_evaswebsite;" +
+                "User ID=DB_5349_evaswebsite_user;" +
+                "Password=Sonics.256");
+
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand command = conn.CreateCommand();
+                    string strSQL = "Select * from tblProducts where ID = @ProductID";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = strSQL;
+                    command.Parameters.AddWithValue("@ProductID",ProductID);
+                    /*Return one product where ID matches*/
+                    SqlDataReader reader = command.ExecuteReader();
+                    Record_Product product = new Record_Product();
+                    while (reader.Read()){
+                        product.Title = reader.GetString(1);
+                        product.Description = reader.GetString(2);
+                        product.Quantity = reader.GetInt32(3);
+                        product.Cost = reader.GetDouble(4);
+                        product.PicturePath = reader.GetString(5);
+                    }
+                    conn.Close();
+                    globalMethods.printDebug("get one product set");
+                    return product;
+                }
+                catch (Exception ex)
+                {
+                    globalMethods.printDebug($"Get One Product Error:\n {ex}");
+                    return null;
+                }
+            }
+        }
+
         /* Get Record_Product Query */
         public static List<Record_Product> getProduct()
         {
@@ -189,7 +230,7 @@ namespace EvasWebsite
         }
 
         /* create a table for modification */
-        public string tableProducts(int ProductID
+        public static string tableProducts(int ProductID
                                     , string Title
                                     , string Description
                                     , int Quantity
@@ -221,7 +262,7 @@ namespace EvasWebsite
 
         /* display product function */
 
-        public string displayProducts(string Title
+        public static string displayProducts(string Title
                                     , string Description
                                     , int Quantity
                                     , double Cost

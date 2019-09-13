@@ -39,7 +39,7 @@ namespace EvasWebsite.Pages
                 lblError.Visible = false;
                 foreach (Record_Product item in Functions_Product.getProduct())
                 {
-                    mainStore.Text += (product_functions.displayProducts(
+                    mainStore.Text += (Functions_Product.displayProducts(
                           item.Title
                         , item.Description
                         , item.Quantity

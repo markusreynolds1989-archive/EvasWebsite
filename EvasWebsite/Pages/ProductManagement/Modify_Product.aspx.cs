@@ -13,7 +13,6 @@ namespace EvasWebsite.Pages.ProductManagement
     public partial class Modify_Product : System.Web.UI.Page
     {
         Record_Product product = new Record_Product();
-        Functions_Product functions_product = new Functions_Product();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,7 +46,7 @@ namespace EvasWebsite.Pages.ProductManagement
                 {
                     foreach (Record_Product item in Functions_Product.getProduct())
                     {
-                        productTable.Text += (functions_product.tableProducts(
+                        productTable.Text += (Functions_Product.tableProducts(
                               item.productID
                             , item.Title
                             , item.Description
@@ -90,13 +89,21 @@ namespace EvasWebsite.Pages.ProductManagement
         }
         public void captureData()
         {
-            product.productID = Convert.ToInt32(txtID.Text);
-            product.Title = txtTitle.Text;
-            product.Description = txtDesc.Text;
-            product.Quantity = Convert.ToInt32(txtQuan.Text);
-            product.Cost = Convert.ToSingle(txtCost.Text);
-            product.PicturePath = upPicture.FileName;
+            try
+            {
+                product.productID = Convert.ToInt32(txtID.Text);
+                product.Title = txtTitle.Text;
+                product.Description = txtDesc.Text;
+                product.Quantity = Convert.ToInt32(txtQuan.Text);
+                product.Cost = Convert.ToSingle(txtCost.Text);
+                product.PicturePath = upPicture.FileName;
+            }
+            catch(Exception ex)
+            {
+                globalMethods.printDebug(ex.ToString());
+            }
         }
+
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
@@ -106,6 +113,18 @@ namespace EvasWebsite.Pages.ProductManagement
         protected void txtID_TextChanged(object sender, EventArgs e)
         {
             /*get data for the rest of the boxes to fill in */
+            try
+            {
+                product = Functions_Product.getOneProductById(Convert.ToInt32(txtID.Text));
+                txtTitle.Text = product.Title;
+                txtDesc.Text = product.Description;
+                txtQuan.Text = product.Quantity.ToString();
+                txtCost.Text = product.Cost.ToString();
+            }
+            catch(Exception ex)
+            {
+                globalMethods.printDebug(ex.ToString());
+            }
         }
     }
 }
