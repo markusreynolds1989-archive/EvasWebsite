@@ -21,7 +21,7 @@ namespace EvasWebsite
                 "Data Source=s08.everleap.com;" +
                 "Initial Catalog=DB_5349_evaswebsite;" +
                 "User ID=DB_5349_evaswebsite_user;" +
-                "Password=Sonics.256");
+                "Password=");
 
             using (conn)
             {
@@ -72,7 +72,7 @@ namespace EvasWebsite
                 "Data Source=s08.everleap.com;" +
                 "Initial Catalog=DB_5349_evaswebsite;" +
                 "User ID=DB_5349_evaswebsite_user;" +
-                "Password=Sonics.256");
+                "Password=");
             using (conn)
             {
                 try
